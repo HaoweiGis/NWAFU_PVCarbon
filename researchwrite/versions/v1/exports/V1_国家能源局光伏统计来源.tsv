@@ -1,0 +1,9 @@
+year	url	minimum_use	known_scope	status
+2015	https://www.nea.gov.cn/2016-02/05/c_135076636.htm	province capacity calibration	province cumulative and new capacity; national generation and utilization hours	QUEUED
+2016	https://www.nea.gov.cn/2017-02/04/c_136030860.htm	province capacity calibration	province cumulative and new capacity; national generation	QUEUED
+2017	https://www.nea.gov.cn/2018-01/24/c_136920159.htm	national continuity check	national new capacity and selected distributed-PV province statistics	QUEUED
+2018	https://hzj.nea.gov.cn/dtyw/gjnyjdt/202309/t20230913_74457.html	province capacity calibration	province cumulative and new capacity; national generation and utilization hours	QUEUED
+2019	https://obor.nea.gov.cn/detail/12010.html	national continuity check	national cumulative/new centralized/distributed capacity; generation and utilization hours	QUEUED
+2020	https://www.nea.gov.cn/2021-01/30/c_139708580.htm	national continuity check	national new centralized/distributed capacity and utilization hours	QUEUED
+2021	https://www.nea.gov.cn/2022-03/09/c_1310508114.htm	province capacity calibration	province new and cumulative centralized/distributed capacity	QUEUED
+2022	https://nfj.nea.gov.cn/xwzx/gjnyjdt/202308/t20230823_23732.html	province capacity calibration	province new and cumulative centralized/distributed capacity	QUEUED

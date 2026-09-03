@@ -1,0 +1,26 @@
+# 统一按 LF 存储文本；工作区检出由各机器决定
+* text=auto eol=lf
+
+# 计算端（Linux/服务器）上运行的脚本必须是 LF
+*.sh    text eol=lf
+*.py    text eol=lf
+
+# Windows 脚本用 CRLF
+*.ps1   text eol=crlf
+*.bat   text eol=crlf
+
+# 二进制：不做行尾转换
+*.docx  binary
+*.xlsx  binary
+*.pdf   binary
+*.png   binary
+*.jpg   binary
+*.tif   binary
+*.zip   binary
+*.shp   binary
+*.dbf   binary
+*.shx   binary
+*.sbn   binary
+*.sbx   binary
+*.prj   binary
+*.cpg   binary

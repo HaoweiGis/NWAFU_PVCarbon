@@ -1,0 +1,453 @@
+[
+  {
+    "layer": "中国_县",
+    "status": "PASS",
+    "encoding": "UTF-8",
+    "crs_wkt": "GEOGCS[\"GCS_China_Geodetic_Coordinate_System_2000\",DATUM[\"D_China_2000\",SPHEROID[\"CGCS2000\",6378137.0,298.257222101]],PRIMEM[\"Greenwich\",0.0],UNIT[\"Degree\",0.0174532925199433]]",
+    "sha256": {
+      ".shp": "0d870fb06dad00e8a8f00a8ca8a327a449935955989f4618d8476dc27805b2e5",
+      ".shx": "c15f3974dc334d0df30d95e159f20e3cf696f9535160efb883e63ab4cff46155",
+      ".dbf": "b950e6114b2eaeb7cca2ec1de5cde8acfafe7ccc3e55e13348007ba69595a1c5",
+      ".prj": "b10dbe4d6d1de908d340f892c90b3d31a552630af3742bb515bfe1bd26124f2c",
+      ".cpg": "3ad3031f5503a4404af825262ee8232cc04d4ea6683d42c5dd0a2f2a27ac9824"
+    },
+    "shape_type": 5,
+    "bbox": [
+      73.498962,
+      3.832541,
+      135.087387,
+      53.558498
+    ],
+    "records": 2891,
+    "null_shapes": 0,
+    "dbf_last_update": "2026-04-12",
+    "fields": [
+      {
+        "name": "name",
+        "type": "C",
+        "length": 80,
+        "decimal": 0
+      },
+      {
+        "name": "gb",
+        "type": "C",
+        "length": 80,
+        "decimal": 0
+      }
+    ],
+    "field_stats": {
+      "name": {
+        "nonempty": 2891,
+        "unique_nonempty": 2853,
+        "duplicate_nonempty": 38,
+        "replacement_character_values": 0,
+        "lengths": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          15
+        ]
+      },
+      "gb": {
+        "nonempty": 2891,
+        "unique_nonempty": 2891,
+        "duplicate_nonempty": 0,
+        "replacement_character_values": 0,
+        "lengths": [
+          9
+        ]
+      }
+    },
+    "samples": [
+      {
+        "name": "鄂城区",
+        "gb": "156420704"
+      },
+      {
+        "name": "龙里县",
+        "gb": "156522730"
+      },
+      {
+        "name": "华容区",
+        "gb": "156420703"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "layer": "中国_县_境界线",
+    "status": "PASS",
+    "encoding": "UTF-8",
+    "crs_wkt": "GEOGCS[\"GCS_China_Geodetic_Coordinate_System_2000\",DATUM[\"D_China_2000\",SPHEROID[\"CGCS2000\",6378137.0,298.257222101]],PRIMEM[\"Greenwich\",0.0],UNIT[\"Degree\",0.0174532925199433]]",
+    "sha256": {
+      ".shp": "b8744eef2788fa781885c6b57d1b3f03dc5a23ccc70936b254b9462c703f20f4",
+      ".shx": "585f44c8ba5846ec7fdc14db22d2be9e4014bf57355d13dfc5b6e013c43bed3d",
+      ".dbf": "b277b2177a33dcb7951abdb5aae42828a201579cc0cec57106994c446e8819a4",
+      ".prj": "b10dbe4d6d1de908d340f892c90b3d31a552630af3742bb515bfe1bd26124f2c",
+      ".cpg": "3ad3031f5503a4404af825262ee8232cc04d4ea6683d42c5dd0a2f2a27ac9824"
+    },
+    "shape_type": 3,
+    "bbox": [
+      73.881449,
+      3.408477,
+      122.816588,
+      38.676849
+    ],
+    "records": 7,
+    "null_shapes": 0,
+    "dbf_last_update": "2026-04-12",
+    "fields": [
+      {
+        "name": "name",
+        "type": "C",
+        "length": 80,
+        "decimal": 0
+      },
+      {
+        "name": "gb",
+        "type": "C",
+        "length": 80,
+        "decimal": 0
+      }
+    ],
+    "field_stats": {
+      "name": {
+        "nonempty": 7,
+        "unique_nonempty": 1,
+        "duplicate_nonempty": 6,
+        "replacement_character_values": 0,
+        "lengths": [
+          3
+        ]
+      },
+      "gb": {
+        "nonempty": 0,
+        "unique_nonempty": 0,
+        "duplicate_nonempty": 0,
+        "replacement_character_values": 0,
+        "lengths": []
+      }
+    },
+    "samples": [
+      {
+        "name": "境界线",
+        "gb": ""
+      },
+      {
+        "name": "境界线",
+        "gb": ""
+      },
+      {
+        "name": "境界线",
+        "gb": ""
+      }
+    ],
+    "errors": []
+  },
+  {
+    "layer": "中国_市",
+    "status": "PASS",
+    "encoding": "UTF-8",
+    "crs_wkt": "GEOGCS[\"GCS_China_Geodetic_Coordinate_System_2000\",DATUM[\"D_China_2000\",SPHEROID[\"CGCS2000\",6378137.0,298.257222101]],PRIMEM[\"Greenwich\",0.0],UNIT[\"Degree\",0.0174532925199433]]",
+    "sha256": {
+      ".shp": "008716421b3215ab5fa34014cf509e06bd84673be228154432f40cc21745a2e4",
+      ".shx": "d393bf6a30b74b08d5c99d206f8314980c9c922e70e257e22a4f5f44f98a0a7a",
+      ".dbf": "5eca96bc1c6db992f6ee47b6c1939f556a1d7f304a961b77500b3d7767d1afe7",
+      ".prj": "b10dbe4d6d1de908d340f892c90b3d31a552630af3742bb515bfe1bd26124f2c",
+      ".cpg": "3ad3031f5503a4404af825262ee8232cc04d4ea6683d42c5dd0a2f2a27ac9824"
+    },
+    "shape_type": 5,
+    "bbox": [
+      73.498962,
+      3.832541,
+      135.087387,
+      53.558498
+    ],
+    "records": 375,
+    "null_shapes": 0,
+    "dbf_last_update": "2026-04-12",
+    "fields": [
+      {
+        "name": "name",
+        "type": "C",
+        "length": 80,
+        "decimal": 0
+      },
+      {
+        "name": "gb",
+        "type": "C",
+        "length": 80,
+        "decimal": 0
+      }
+    ],
+    "field_stats": {
+      "name": {
+        "nonempty": 375,
+        "unique_nonempty": 375,
+        "duplicate_nonempty": 0,
+        "replacement_character_values": 0,
+        "lengths": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ]
+      },
+      "gb": {
+        "nonempty": 375,
+        "unique_nonempty": 375,
+        "duplicate_nonempty": 0,
+        "replacement_character_values": 0,
+        "lengths": [
+          9
+        ]
+      }
+    },
+    "samples": [
+      {
+        "name": "梅州市",
+        "gb": "156441400"
+      },
+      {
+        "name": "鄂州市",
+        "gb": "156420700"
+      },
+      {
+        "name": "吕梁市",
+        "gb": "156141100"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "layer": "中国_市_境界线",
+    "status": "PASS",
+    "encoding": "UTF-8",
+    "crs_wkt": "GEOGCS[\"GCS_China_Geodetic_Coordinate_System_2000\",DATUM[\"D_China_2000\",SPHEROID[\"CGCS2000\",6378137.0,298.257222101]],PRIMEM[\"Greenwich\",0.0],UNIT[\"Degree\",0.0174532925199433]]",
+    "sha256": {
+      ".shp": "4d1504a93e6828eb7d57e86b44859cdbe6e57f80fb21794b027fba93f2e17549",
+      ".shx": "ffaa541f96bc77e0f1cd1b199ea7f58cb49bd7b069f95adb9c3668284bbbec57",
+      ".dbf": "ba92f43b548c186df2081d5a264503e99c71de4f0b495773808ae21cf3c96185",
+      ".prj": "b10dbe4d6d1de908d340f892c90b3d31a552630af3742bb515bfe1bd26124f2c",
+      ".cpg": "3ad3031f5503a4404af825262ee8232cc04d4ea6683d42c5dd0a2f2a27ac9824"
+    },
+    "shape_type": 3,
+    "bbox": [
+      73.881449,
+      3.408477,
+      122.782791,
+      38.676849
+    ],
+    "records": 13,
+    "null_shapes": 0,
+    "dbf_last_update": "2026-04-12",
+    "fields": [
+      {
+        "name": "name",
+        "type": "C",
+        "length": 80,
+        "decimal": 0
+      },
+      {
+        "name": "gb",
+        "type": "C",
+        "length": 80,
+        "decimal": 0
+      }
+    ],
+    "field_stats": {
+      "name": {
+        "nonempty": 13,
+        "unique_nonempty": 1,
+        "duplicate_nonempty": 12,
+        "replacement_character_values": 0,
+        "lengths": [
+          3
+        ]
+      },
+      "gb": {
+        "nonempty": 0,
+        "unique_nonempty": 0,
+        "duplicate_nonempty": 0,
+        "replacement_character_values": 0,
+        "lengths": []
+      }
+    },
+    "samples": [
+      {
+        "name": "境界线",
+        "gb": ""
+      },
+      {
+        "name": "境界线",
+        "gb": ""
+      },
+      {
+        "name": "境界线",
+        "gb": ""
+      }
+    ],
+    "errors": []
+  },
+  {
+    "layer": "中国_省",
+    "status": "PASS",
+    "encoding": "UTF-8",
+    "crs_wkt": "GEOGCS[\"GCS_China_Geodetic_Coordinate_System_2000\",DATUM[\"D_China_2000\",SPHEROID[\"CGCS2000\",6378137.0,298.257222101]],PRIMEM[\"Greenwich\",0.0],UNIT[\"Degree\",0.0174532925199433]]",
+    "sha256": {
+      ".shp": "976b02e845c76134ae2879cab2b3919c7177f41e2af4afcc1144d95bff15491d",
+      ".shx": "f529a48b01dba2b70513564f68e8317975a02aa969354a9d2df27103090a6b5d",
+      ".dbf": "3f17f23e5542fc287d13e60de353e581b584182c65af94e1c7ed7d524532b95b",
+      ".prj": "b10dbe4d6d1de908d340f892c90b3d31a552630af3742bb515bfe1bd26124f2c",
+      ".cpg": "3ad3031f5503a4404af825262ee8232cc04d4ea6683d42c5dd0a2f2a27ac9824"
+    },
+    "shape_type": 5,
+    "bbox": [
+      73.498962,
+      3.832541,
+      135.087387,
+      53.558498
+    ],
+    "records": 34,
+    "null_shapes": 0,
+    "dbf_last_update": "2026-04-12",
+    "fields": [
+      {
+        "name": "name",
+        "type": "C",
+        "length": 80,
+        "decimal": 0
+      },
+      {
+        "name": "gb",
+        "type": "C",
+        "length": 80,
+        "decimal": 0
+      }
+    ],
+    "field_stats": {
+      "name": {
+        "nonempty": 34,
+        "unique_nonempty": 34,
+        "duplicate_nonempty": 0,
+        "replacement_character_values": 0,
+        "lengths": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ]
+      },
+      "gb": {
+        "nonempty": 34,
+        "unique_nonempty": 34,
+        "duplicate_nonempty": 0,
+        "replacement_character_values": 0,
+        "lengths": [
+          9
+        ]
+      }
+    },
+    "samples": [
+      {
+        "name": "河南省",
+        "gb": "156410000"
+      },
+      {
+        "name": "浙江省",
+        "gb": "156330000"
+      },
+      {
+        "name": "海南省",
+        "gb": "156460000"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "layer": "中国_省_境界线",
+    "status": "PASS",
+    "encoding": "UTF-8",
+    "crs_wkt": "GEOGCS[\"GCS_China_Geodetic_Coordinate_System_2000\",DATUM[\"D_China_2000\",SPHEROID[\"CGCS2000\",6378137.0,298.257222101]],PRIMEM[\"Greenwich\",0.0],UNIT[\"Degree\",0.0174532925199433]]",
+    "sha256": {
+      ".shp": "dd94d30c99e999b6fbfa8e16d5f02092fb22cbc31b7d4c975ca23e1b77d0d7c9",
+      ".shx": "c7df5e0ebb261f0af56a64c8f94e801a44388688f0b325e639deccaf2c961762",
+      ".dbf": "8e4e4ef9cafd2d1543ced119512f33e3352d700a021dcb5acd9267f6008201d2",
+      ".prj": "b10dbe4d6d1de908d340f892c90b3d31a552630af3742bb515bfe1bd26124f2c",
+      ".cpg": "3ad3031f5503a4404af825262ee8232cc04d4ea6683d42c5dd0a2f2a27ac9824"
+    },
+    "shape_type": 3,
+    "bbox": [
+      73.881449,
+      3.408477,
+      122.816588,
+      38.676849
+    ],
+    "records": 8,
+    "null_shapes": 0,
+    "dbf_last_update": "2026-04-12",
+    "fields": [
+      {
+        "name": "name",
+        "type": "C",
+        "length": 80,
+        "decimal": 0
+      },
+      {
+        "name": "gb",
+        "type": "C",
+        "length": 80,
+        "decimal": 0
+      }
+    ],
+    "field_stats": {
+      "name": {
+        "nonempty": 8,
+        "unique_nonempty": 1,
+        "duplicate_nonempty": 7,
+        "replacement_character_values": 0,
+        "lengths": [
+          3
+        ]
+      },
+      "gb": {
+        "nonempty": 0,
+        "unique_nonempty": 0,
+        "duplicate_nonempty": 0,
+        "replacement_character_values": 0,
+        "lengths": []
+      }
+    },
+    "samples": [
+      {
+        "name": "境界线",
+        "gb": ""
+      },
+      {
+        "name": "境界线",
+        "gb": ""
+      },
+      {
+        "name": "境界线",
+        "gb": ""
+      }
+    ],
+    "errors": []
+  }
+]

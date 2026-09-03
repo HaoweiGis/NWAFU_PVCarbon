@@ -1,0 +1,14 @@
+id	source	required_period	status	blocking_reason	acceptance
+S01	PV polygons and install year	2010-2022	AVAILABLE_NEEDS_AUDIT	3 date anomalies and geometry audit remain	valid unique geometry; install year 2010-2022; checksum frozen
+S02	CLCD annual land cover	2000-2025	AVAILABLE_NEEDS_AUDIT	class code, NoData, CRS and grid alignment not frozen	26 aligned annual rasters; metadata and hashes frozen
+S03	Rice annual maps	pre/post windows for 2010-2022 phases	IN_PROGRESS_UNVERIFIED	official CCD V1 ZIP download started; archive, coverage and crop codes not yet validated	annual rasters for 2001-2024; expected regions and years complete; rice classes and NoData pass validation; hashes frozen
+S04	Maize annual maps	pre/post windows for 2010-2022 phases	IN_PROGRESS_UNVERIFIED	official CCD V1 ZIP download started; archive, coverage and crop codes not yet validated	annual rasters for 2001-2024; expected regions and years complete; maize classes and NoData pass validation; hashes frozen
+S05	Wheat annual maps	pre/post windows for 2010-2022 phases	IN_PROGRESS_UNVERIFIED	official CCD V1 ZIP download started; archive, coverage and crop codes not yet validated	annual rasters for 2001-2024; expected regions and years complete; wheat and rotation classes pass validation; hashes frozen
+S06	Authoritative county boundaries and crosswalk	2010-2022	MISSING_CRITICAL	pilot boundaries lack stable historical code crosswalk	county code, parent code, valid_from, valid_to and geometry frozen
+S07	Site threshold validation sample	2010-2022	MISSING_CRITICAL	no labelled high-resolution sample	stratified labels support baseline threshold and sensitivity thresholds
+S08	Land-change validation sample	study years	MISSING_CRITICAL	no labelled first-expansion/recultivation sample	stratified labels and reviewer fields frozen
+S09	ERA5-Land climate	study years	IN_PROGRESS	download remains active and exact variable set is not frozen	complete selected variables; readable files; hashes frozen
+S10	Slope/DEM	baseline	MISSING_REQUIRED	no source found in parent project	DEM source, resolution, vertical units and derived slope method frozen
+S11	Road/city/grid distance layers	pre-construction	MISSING_REQUIRED	no versioned historical sources found	year-valid sources and distance definitions frozen
+S12	Soil and vegetation carbon	baseline and uncertainty	IN_PROGRESS	SoilGrids and biomass acquisition/parameter freeze incomplete	units, depth, uncertainty, transition factors and checksums frozen
+S13	Agricultural production emission factors	crop-year or scenario	MISSING_CRITICAL	Agrco2 definition and parameters absent	system boundary, units, crop factors and uncertainty frozen

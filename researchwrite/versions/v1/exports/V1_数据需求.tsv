@@ -1,0 +1,18 @@
+id	priority	group	dataset_or_task	period	minimum_fields	status	blocking_output	next_action
+D01	P0	pv	PV polygons and installation timing	2010-2022	geometry objectid area install_date install_year major_type	AVAILABLE_NEEDS_AUDIT	phase and treatment timing	correct 3 date anomalies and audit geometry duplicates
+D02	P0	landcover	CLCD annual land cover	2000-2025	annual aligned rasters class codes nodata crs hashes	AVAILABLE_NEEDS_AUDIT	stable cropland induced area source land	audit metadata alignment and checksums
+D03	P1	pv	Agrivoltaics capacity subset	2010-2022	geometry project year type capacity link_id	AVAILABLE_SUBSET	capacity calibration	match to main PV and report coverage
+D04	P0	climate	ERA5-Land selected controls and PV inputs	study years	precipitation temperature radiation extremes	INCOMPLETE_PARTIALS	confounding controls and generation model	freeze variables then audit exact files
+D05	P0	boundary	authoritative county boundaries and stable code crosswalk	study years	county_code county_name parent_code valid_from valid_to geometry	MISSING	county responsibility and territorial accounts	compare authoritative candidates
+D06	P0	validation	Site Phase threshold validation sample	2010-2022	patch_pair same_site label image_date reviewer	MISSING	Patch Site Phase	build stratified manual sample
+D07	P0	validation	land change validation sample	study years	pre_land install_year expansion_class persistence reviewer	MISSING	causal land response	build stratified manual sample
+D08	P0	controls	county time-varying confounders	annual	climate builtup population nightlight agriculture_policy_or_economy	PARTIAL	causal attribution	define minimum causal control set
+D09	P0	carbon	soil organic carbon and bulk density	baseline	SOC_0_30cm bulk_density coarse_fragments uncertainty	MISSING	iLUC tonnes	compare candidate products and China validation
+D10	P0	carbon	vegetation biomass carbon	baseline	AGB BGB land_type uncertainty	MISSING	iLUC tonnes	compare remote sensing and IPCC factors
+D11	P0	carbon	land conversion carbon parameters	20_and_30_year	transition factor release_curve horizon uncertainty	MISSING	iLUC annual and cumulative emissions	build evidence table before parameter freeze
+D12	P0	energy	Phase or county PV capacity generation	2010_projection_horizon	phase_id capacity operation_year annual_generation	MISSING_NATIONAL	offset ratio payback	match available capacity then calibrate area power model
+D13	P0	energy	PV generation model inputs	operation_horizon	radiation temperature performance_ratio degradation lifetime	PARTIAL	offset ratio payback	freeze model and validation statistics
+D14	P0	energy	marginal grid emission factors	annual_grid_or_province	region year marginal_ef method uncertainty	MISSING	offset ratio payback	compare sources average only sensitivity
+D15	P0_scenario	scenario	post-2022 operation and grid pathways	2023_lifetime	degradation lifetime grid_decarbonization marginal_ef_path	MISSING	projected payback year	freeze scenarios or report only through 2025
+E01	DEFERRED	crop	crop maps yield and cropping intensity	annual	crop area yield seasons	DEFERRED	none in V1	do not download
+E02	DEFERRED	siting	grid access protected land and costs	baseline_future	mixed	DEFERRED	none in V1	do not download

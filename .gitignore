@@ -1,0 +1,51 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+
+# --- 大体量数据：栅格与压缩包不进版本库（放计算端 / 数据服务器）---
+*.tif
+*.tiff
+*.img
+*.vrt
+*.ovr
+*.hdf
+*.he5
+*.nc
+*.grib
+*.grib2
+*.zip
+*.gz
+*.tar
+*.7z
+*.rar
+
+# --- 防御性：大数据目录不应出现在仓库（按项目实际调整）---
+/input/
+!/input/README.md
+
+# --- data_sources/ 只是本地原始数据暂存，不进版本库（仅保留说明）---
+/data_sources/**
+!/data_sources/
+!/data_sources/README.md
+
+# --- PVCropCarbon 子流水线的运行产物由其自身 .gitignore 管；这里补充大产物目录 ---
+/PVCropCarbon/work/**
+/PVCropCarbon/outputs/**
+/PVCropCarbon/logs/**
+!/PVCropCarbon/**/.gitkeep
+
+# --- 图表：忽略中间预览，保留最终产物 ---
+/output/figures/**/preview_*
+/output/**/_scratch/
+
+# --- 操作系统与编辑器 ---
+.DS_Store
+Thumbs.db
+desktop.ini
+*.tmp
+*.bak
+*~
+.vscode/
+.idea/

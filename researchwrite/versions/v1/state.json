@@ -1,0 +1,15 @@
+{
+  "project": "NWAFU_PVCarbon",
+  "mode": "hybrid",
+  "version": "V1.0",
+  "status": "v1_0_route_frozen_data_acquisition_in_progress",
+  "technical_debts": [
+    "authoritative_county_boundary_and_code_crosswalk",
+    "phase_construction_and_validation",
+    "causal_identification_not_run",
+    "carbon_factors_not_frozen",
+    "national_generation_or_capacity_missing",
+    "marginal_grid_emission_factors_missing",
+    "post_2022_scenarios_not_frozen"
+  ]
+}

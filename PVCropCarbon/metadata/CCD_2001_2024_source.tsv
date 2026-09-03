@@ -1,0 +1,21 @@
+id	value	status	source
+title	China Crop Dataset: A long-term and high-resolution crop distribution dataset in China	VERIFIED	Science Data Bank public metadata
+dataset_id	9df1ab40944b4ce58eec7265462b4247	VERIFIED	Science Data Bank public metadata
+doi	10.57760/sciencedb.32361	VERIFIED	Science Data Bank and Scientific Data article
+cstr	31253.11.sciencedb.32361	VERIFIED	Science Data Bank public metadata
+version	V1	VERIFIED	Science Data Bank public metadata
+license	CC BY 4.0	VERIFIED	Science Data Bank public metadata
+share_status	PUBLIC	VERIFIED	Science Data Bank public metadata
+can_get_zip	true	VERIFIED	Science Data Bank public metadata
+years	2001-2024	VERIFIED	Scientific Data article
+format	GeoTIFF	VERIFIED	Scientific Data article
+crs	EPSG:4326	VERIFIED	Scientific Data article
+nominal_resolution	30 m	VERIFIED	Scientific Data article
+file_count	672	VERIFIED	Science Data Bank public metadata
+registered_bytes	43090845540	VERIFIED	Science Data Bank public metadata
+zip_bytes	10163712508	VERIFIED	Official getZipFile HEAD response
+zip_etag	6a774fd0-25dcdf1fc	VERIFIED	Official getZipFile HEAD response
+zip_last_modified	2026-08-08T15:48:32Z	VERIFIED	Official getZipFile HEAD response
+official_page	https://www.scidb.cn/en/detail?dataSetId=9df1ab40944b4ce58eec7265462b4247	VERIFIED	Science Data Bank
+download_url	https://china.scidb.cn/getZipFile?dataSetId=9df1ab40944b4ce58eec7265462b4247&version=V1	VERIFIED	Science Data Bank public frontend
+missing_regions	Beijing;Qinghai;Tibet;Taiwan;Hong Kong;Macao	PENDING_ARCHIVE_VERIFICATION	User-provided description

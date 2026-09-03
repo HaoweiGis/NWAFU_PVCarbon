@@ -1,0 +1,53 @@
+field	first_table	unit_or_type	definition	aliases_or_note
+phase_county_id	T01	string	Phase与县域相交后的统计编号	原文phase_ county_ id; 不用于构造Phase
+phase_id	T01	string	完整Site与建设年份形成的批次编号	跨县保持不变
+site_id	T01	string	空间邻近聚合后的完整场址编号	候选阈值30/50/100/200/300m
+year	T01	integer	建设年份	2010-2022
+patch_count	T01	count	Phase包含的原始图斑数	positive integer
+phase_area	T01	m2	完整Phase面积	另存intersection_area_m2用于县域相交核对
+county	T01	string	县级名称	需配套有效期
+county_id	T01	string	稳定县级代码	不得用名称代替
+city	T01	string	地级名称	需配套有效期
+city_id	T01	string	稳定地级代码	string避免前导零丢失
+province	T01	string	省级名称	需配套有效期
+province_id	T01	string	稳定省级代码	string避免前导零丢失
+staple_pre_area	T02	m2	建设前稳定主粮面积	三作物并集避免重叠重复
+staple_pre_area_rate	T02	ratio	建设前稳定主粮面积占Phase面积	原文staple_pre_arearate
+rice_pre_area	T02	m2	建设前稳定水稻面积	作物年份窗口待冻结
+maize_pre_area	T02	m2	建设前稳定玉米面积	作物年份窗口待冻结
+wheat_pre_area	T02	m2	建设前稳定小麦面积	作物年份窗口待冻结
+staple_continued_area	T02	m2	建设后持续存在主粮种植面积	原文taple_continued_area拼写修正
+rice_continued_area	T02	m2	继续种水稻面积	连续两个完整年份规则
+maize_continued_area	T02	m2	继续种玉米面积	连续两个完整年份规则
+wheat_continued_area	T02	m2	继续种小麦面积	连续两个完整年份规则
+continued_share	T02	ratio	持续主粮面积占建设前稳定主粮面积	分母为0时NA
+staple_ceased_area	T02	m2	建设后持续退出三类主粮的面积	不得等同于退出农业
+rice_ceased_area	T02	m2	持续退出水稻且未转玉米/小麦的面积	需定义转其他作物的处理
+maize_ceased_area	T02	m2	持续退出玉米且未转水稻/小麦的面积	需定义转其他作物的处理
+wheat_ceased_area	T02	m2	持续退出小麦且未转水稻/玉米的面积	需定义转其他作物的处理
+cessation_rate	T02	ratio	主粮退出面积占建设前稳定主粮面积	分母为0时NA
+rain	T02	mm_year	年度累计降水	原文Rain; 聚合年份定义待冻结
+temperature	T02	degC	年度平均2m气温	原文tem
+slope	T03	degree	平均坡度	源DEM与面积加权方法待冻结
+soil_quality	T03	index	土壤或地力指标	指标尚未定义; 禁止直接生产
+dist_road_pre	T03	m	建设前距主要道路	道路等级和年份待冻结
+dist_city_pre	T03	m	建设前距县城或城市驻地	目标点定义待冻结
+dist_grid_pre	T03	m	建设前距电网或变电站	电压等级和年份待冻结
+dist_existing_crop	T03	m	距已有耕地	基准年待冻结
+dist_existing_pv_pre	T03	m	距建设前已有PV	仅使用当年以前PV
+ring_area	T03	m2	扣除Phase和掩膜后的有效环带面积	0-5/5-10/10-20/20-50km另设ring_id
+new_crop_area	T03	m2	观测新增耕地面积	归因前不得称诱发
+new_crop_rate	T03	ratio	新增耕地占上一年耕地总量比例	原文语义; 分母空间范围待冻结
+first_expansion_area	T03	m2	历史长期未耕作土地首次稳定转耕	至少持续2年
+recultivation_area	T03	m2	历史曾为耕地退出后重新耕作	与首次扩张互斥
+net_crop_change	T03	m2	耕地增加减耕地减少	同一环带同一年
+forest_to_crop_area	T03	m2	林地转耕地面积	来源类别互斥
+grass_to_crop_area	T03	m2	草地转耕地面积	来源类别互斥
+shrub_to_crop_area	T03	m2	灌木地转耕地面积	CLCD类别能力需核验
+wetland_to_crop_area	T03	m2	湿地转耕地面积	原文wetland_to_crop
+bare_to_crop_area	T03	m2	裸地转耕地面积	来源类别互斥
+new_built_area	T03	m2	新增建设用地面积	控制变量而非耕地来源
+eligible_area_pre	T03	m2	建设前可转耕非耕地面积	资格掩膜规则待冻结
+land_co2	T04	kgCO2e	土地转化碳排放	原文Landco2; 需另存核算期和情景
+agri_co2	T04	kgCO2e	新增农业生产碳排放	原文Agrco2; 系统边界待冻结
+sum_co2	T04	kgCO2e	land_co2与agri_co2之和	原文Sumco2; 仅在口径一致时相加

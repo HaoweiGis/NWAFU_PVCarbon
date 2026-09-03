@@ -1,0 +1,12 @@
+id	stage	depends_on	output	acceptance	status
+T01	Audit and normalize sources	S01-S13	metadata/frozen_sources.tsv	all P0 sources versioned, hashed, readable and semantically frozen	BLOCKED
+T02	Patch to Site	T01	work/site_candidates.gpkg	30/50/100/200/300 m candidates built; baseline selected from labelled sample	BLOCKED
+T03	Site to Phase	T02	work/phases.gpkg	phase_id is unique Site plus install year; original patches traceable	BLOCKED
+T04	Phase-county intersection	T03,S06	outputs/phase_county.parquet	complete Phase preserved; intersection areas reconcile to Phase area	BLOCKED
+T05	Pre-construction stable staple crops	T03,S03-S05	work/staple_pre.parquet	crop-specific annual windows and stable rules pass validation	BLOCKED
+T06	Post-construction crop continuation/exit	T05	outputs/crop_exit.parquet	two complete post years; mutually exclusive crop classes; areas reconcile	BLOCKED
+T07	Phase ring-year panel	T03,S02,S06,S09-S11	outputs/ring_landchange.parquet	rings exclude Phase; no overlap double count; first expansion separated from recultivation	BLOCKED
+T08	Counterfactual attribution	T07,S07,S08	outputs/attributed_expansion.parquet	pre-trends, intensity gradient, distance decay and placebo gates pass	BLOCKED
+T09	Land-conversion carbon	T08,S12	outputs/ring_landcarbon.parquet	Landco2 units and 20/30-year release scenarios pass mass-balance tests	BLOCKED
+T10	Agricultural emissions	T06,T08,S13	outputs/ring_agcarbon.parquet	Agrco2 boundary and crop factors frozen; uncertainty propagated	BLOCKED
+T11	Final tables	T04,T06,T07,T09,T10	outputs/T01-T04	52 source fields plus required extra keys; uniqueness, null, unit and reconciliation checks pass	BLOCKED

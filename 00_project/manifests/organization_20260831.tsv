@@ -1,0 +1,6 @@
+sha256	old_path	new_path	status
+C716784C89A4B24BF6F96D64C86B80266CF0994F1FE508CD5C8C49FBBA24412B	PV power plants of China from 2010 to 2022.zip	data_sources/pv_inventory/raw/PV power plants of China from 2010 to 2022.zip	moved
+3CA26E30472A1F3A7F6754FE72176A3D6DE47023614FDD0D3DFBD7EA4C0FFDD8	省市县.zip	data_sources/boundaries/raw/省市县.zip	moved
+DEEE057226CBB0DAEBC8DAA60583B51FAE56EECF4C05430FCB824C1A92FBC77A	SC-1-Photovoltaic expansion occupied large staple cropland with minimalyieldreductioninChina-main.pdf	references/articles/SC-1-Photovoltaic expansion occupied large staple cropland with minimalyieldreductioninChina-main.pdf	moved
+75FA148CBD1E98AA447156637EEAF15F8ABE6DCD3807B308C901E9925D9E0C7E	ScreenShot_2026-04-12_094654_507.png	references/images/ScreenShot_2026-04-12_094654_507.png	moved
+8F18CF478CA219CBABD5601A06B2C94A585791E99B3DD65F41D902FDC8700FA2	新建 文本文档.txt	references/notes/V1_科学问题来源笔记.txt	moved

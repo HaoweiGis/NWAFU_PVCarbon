@@ -32,7 +32,7 @@
 
 | 编号 | = tasks.tsv | 目标 | 前置 | 产物 | status |
 |---|---|---|---|---|---|
-| P01 | T01 | 审计并冻结 S01–S13 可用源、分析坐标系与分析网格 | S01–S13 | `metadata/frozen_sources.tsv` | 未起草 (BLOCKED) |
+| [P01](P01-源审计与网格冻结.md) | T01 | 冻结分析网格(CLCD Albers) + PV 图斑审计 + 候选县界审计（碳源 S12 审计另出） | 无（需 server-env done） | `metadata/{analysis_grid.json,frozen_sources.tsv}`、`work/patches_clean.gpkg` | **draft** |
 | P02 | T02 | Patch→Site 候选（30/50/100/200/300 m），从人工样本选基线阈值 | P01, S07 | `work/site_candidates.gpkg` | 未起草 (BLOCKED) |
 | P03 | T03 | Site→Phase，`phase_id` = 完整 Site + 建设年，原始图斑可追溯 | P02 | `work/phases.gpkg` | 未起草 (BLOCKED) |
 | P04 | T04 | Phase×县相交，完整 Phase 保留，相交面积之和 = Phase 面积 | P03, S06 | `outputs/phase_county.parquet` | 未起草 (BLOCKED) |

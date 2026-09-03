@@ -47,7 +47,7 @@
 
 ## 运行环境
 
-计算端（`ssh -p 30383 server@8.130.68.96`，根 `/data/ssd/haoweimu/NWAFU_PVCarbon`）目前没有
+计算端（`ssh NWAFU5090`，根 `/data/ssd/haoweimu/NWAFU_PVCarbon`）目前没有
 GDAL / rasterio / geopandas / pyproj 环境；首个任务
 [docs/tasks/T-2026-09-03-server-env.md](../docs/tasks/T-2026-09-03-server-env.md)
 负责用 conda 建立并锁定（导出带精确版本的 lock，登记 sha256）。本项目不使用 Julia。

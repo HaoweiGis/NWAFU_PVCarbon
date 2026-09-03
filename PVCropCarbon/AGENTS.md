@@ -29,7 +29,7 @@
 
 ## 计算与数据
 
-服务器：`ssh -p 30383 server@8.130.68.96`，子项目根
+服务器：`ssh NWAFU5090`，子项目根
 `/data/ssd/haoweimu/NWAFU_PVCarbon/PVCropCarbon`。路径见
 [config/paths.server.env](config/paths.server.env)。共享源数据**不复制**，通过 `source_links/`
 的符号链接**只读**引用主项目与 HDD 数据集。
@@ -91,8 +91,10 @@ logs/                  服务器运行日志（gitignore）
 
 **待冻结（不得由 Codex 自行决定，须先出卡片讨论）**：
 
-6. 分析坐标系 / 分析网格 / 分辨率 —— **待冻结**，与主线 E00 同一决策（CCD 4326 → 主网格
-   最近邻重采样；面积在等面积系或逐像元真实面积下）。
+6. 分析坐标系 / 分析网格 / 分辨率 —— **P01 冻结**，与主线 E00 同一决策。拟采用 CLCD 原生
+   网格：Albers（`+proj=aea +lat_1=25 +lat_2=47 +lat_0=0 +lon_0=105 +datum=WGS84 +units=m`），
+   30 m，161378×135079，原点 (X=-2629624.783, Y=5924251.560)。CCD（4326）与 PV 图斑最近邻/
+   重投影到此网格；面积在此等面积系下。
 7. CCD 缺省地区（北京、青海、西藏、台湾、香港、澳门）—— **须用下载文件树逐项核验**，
    编码 `coverage_missing`，**禁止填类别 0**。青海、西藏是地面光伏大省，落在缺省区的 Phase
    是否走 CLCD-only 降级口径 —— P01 讨论。
@@ -116,7 +118,9 @@ CLCD 与其他证据）；反事实识别（P08）通过前，环带新增耕地
 
 - CCD 缺省地区须逐项核验，编码 `coverage_missing`。
 - CCD 类别 0 语义歧义（见术语边界）。
-- 主 PV 图斑 3 条建设日期异常；D03 Agrivoltaics 经纬度字段名有误 —— 派生层修正。
+- 主 PV 图斑 3 条建设日期异常（`OBJECTID` 21400 / 20046 / 20048）；95 面 `Major_type=Ocean area`；
+  无 Site/Phase 字段、无稳定 patch ID（仅 `OBJECTID` 0..30022）。D03 Agrivoltaics 经纬度字段名有误。
+  详见根 [../AGENTS.md](../AGENTS.md) 已知数据问题。
 - ERA5-Land 有未完成 / `.part` 文件。
 - 主项目未找到 DEM / 坡度（S10）与道路/城市/电网历史图层（S11）来源。
 - SoilGrids / ESA Biomass 获取与参数冻结未完成（S12）。

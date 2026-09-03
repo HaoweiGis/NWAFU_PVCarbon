@@ -4,5 +4,11 @@ outputs/*
 !logs/.gitkeep
 !work/.gitkeep
 !outputs/.gitkeep
+
+# 运行登记（provenance）进版本库
+!outputs/manifests/
+outputs/manifests/*
+!outputs/manifests/experiment_registry.csv
+
 __pycache__/
 *.pyc

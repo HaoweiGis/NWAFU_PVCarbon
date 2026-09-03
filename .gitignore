@@ -30,11 +30,7 @@ __pycache__/
 !/data_sources/
 !/data_sources/README.md
 
-# --- PVCropCarbon 子流水线的运行产物由其自身 .gitignore 管；这里补充大产物目录 ---
-/PVCropCarbon/work/**
-/PVCropCarbon/outputs/**
-/PVCropCarbon/logs/**
-!/PVCropCarbon/**/.gitkeep
+# --- PVCropCarbon 子流水线的运行产物由 PVCropCarbon/.gitignore 自行管理 ---
 
 # --- 图表：忽略中间预览，保留最终产物 ---
 /output/figures/**/preview_*

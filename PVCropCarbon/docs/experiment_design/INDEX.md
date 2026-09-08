@@ -33,9 +33,9 @@
 | 编号 | = tasks.tsv | 目标 | 前置 | 产物 | status |
 |---|---|---|---|---|---|
 | [P01](P01-源审计与网格冻结.md) | T01 | 冻结分析网格(CLCD Albers) + PV 图斑审计 + 候选县界审计（碳源 S12 审计另出） | 无（需 server-env done） | `metadata/{analysis_grid.json,frozen_sources.tsv}`、`work/patches_clean.gpkg` | **draft** |
-| P02 | T02 | Patch→Site 候选（30/50/100/200/300 m），从人工样本选基线阈值 | P01, S07 | `work/site_candidates.gpkg` | 未起草 (BLOCKED) |
-| P03 | T03 | Site→Phase，`phase_id` = 完整 Site + 建设年，原始图斑可追溯 | P02 | `work/phases.gpkg` | 未起草 (BLOCKED) |
-| P04 | T04 | Phase×县相交，完整 Phase 保留，相交面积之和 = Phase 面积 | P03, S06 | `outputs/phase_county.parquet` | 未起草 (BLOCKED) |
+| [P02](P02-Patch到Site候选.md) | T02 | Patch→Site 候选（5 阈值全产）+ 巨型 Site 诊断（基线阈值选定留 S07） | P01, env | `work/site_membership.parquet`、`work/site_candidates.gpkg` | **draft** |
+| [P03](P03-Site到Phase.md) | T03 | Site→Phase：5 阈值完整 Phase 几何 + `phase_id↔patch_id` 明细（不筛地类、不相交县） | P02 | `work/phases.gpkg`、`work/phase_patch_map.parquet` | **draft** |
+| P04 | T04 | Phase×县相交 → T01 表：跨县多行、`phase_id` 不变、加 `intersection_pct` + `is_primary_county`（面积最大县） | P03, S06 | `outputs/phase_county.parquet` | 未起草 (BLOCKED: S06) |
 | P05 | T05 | 建设前稳定主粮（水稻/玉米/小麦 + 并集，三口径） | P03, S03–S05 | `work/staple_pre.parquet` | 未起草 (BLOCKED) |
 | P06 | T06 | 建设后作物持续/退出（两个完整年，类别互斥，作物替代 ≠ 主粮退出） | P05 | `outputs/crop_exit.parquet` | 未起草 (BLOCKED) |
 | P07 | T07 | Phase–环带–年 面板：土地变化（环带扣 Phase、无重复、首扩 vs 复垦分开） | P03, S02, S06, S09–S11 | `outputs/ring_landchange.parquet` | 未起草 (BLOCKED) |
@@ -52,8 +52,19 @@ status: 未起草 → draft → ready → running → done / blocked
 `docs/experiment_design/` 的对应实验**方法一致、代码可复用**。先做子项目正好为主线打地基。
 子项目的中间结果**不自动**视为主项目正式结果（见子项目 README）。
 
-## 待办（起草任何卡片之前）
+## T01 批次表的构建决策（2026-09-03 讨论定）
 
-1. 完成 52+10 字段分诊表。
-2. P01 讨论并冻结：分析坐标系/网格（= 主线 E00）、CCD 缺省区处理（含青海/西藏 PV 降级口径）。
-3. 起草 `docs/tasks/T-2026-09-03-server-env.md` 之后（环境卡在主线根目录，子项目共用）。
+- 粒度：**一行 = 一个 `phase_county`**（Phase×县）。跨县多行，`phase_id` 不变。
+- 跨县：加 `intersection_pct`（该行相交面积 / 完整 `phase_area`，同 `phase_id` 各行之和=1）
+  与 `is_primary_county`（相交面积最大的县 = true），见 `required_extra_fields.tsv`。
+- Patch→Site = 边界间距 ≤ 阈值的连通分量（Albers 下量）；5 阈值全产，基线选定等 S07。
+- 巨型 Site（连片光伏基地）处理：**看 P02 诊断分布再定**（接受基地=一个 Site vs 加直径/面积上限）。
+- 全部 30,023 patch 进（含非耕地、含 95 个 `Ocean area`；海上 Phase 打 `is_offshore`，`phase_county` 允许空）。
+- Phase 分年按修正后 `inst_year`；精确 `inst_date` 留字段供 pre/post 窗口。
+
+## 待办
+
+1. 完成 52+10 字段分诊表（骨架在上）。
+2. **S07** Site 阈值人工样本任务卡（基线阈值选定前置）——待用户确认抽样设计。
+3. **S06** 权威县界获取任务卡——待用户选定来源（国家基础地理信息中心 / RESDC / 民政部代码表）。
+4. P04 卡片——S06 决策后起草。

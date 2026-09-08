@@ -12,3 +12,6 @@ outputs/manifests/*
 
 __pycache__/
 *.pyc
+
+# Word/Office 临时锁文件
+~$*

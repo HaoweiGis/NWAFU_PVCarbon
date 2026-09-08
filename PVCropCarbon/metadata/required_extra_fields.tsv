@@ -2,6 +2,11 @@ field	applies_to	unit_or_type	reason
 observation_year	T02-T04	integer	原year为建设年；逐年作物退出、土地变化和排放记录必须另有观测年
 ring_id	T03-T04	category	明确0-5、5-10、10-20、20-50km；即使分文件保存也必须写入文件元数据
 phase_county_intersection_area	T01-T04	m2	跨县Phase的县域分配面积；用于核对各县相交面积之和等于完整Phase面积
+intersection_pct	T01-T04	ratio	该行相交面积占完整phase_area的比例；同一phase_id各行之和=1(容差内)
+is_primary_county	T01-T04	bool	该phase_id相交面积最大的县为true；需要单县汇总时用，不改变跨县多行粒度
+site_threshold_m	T01-T04	integer	site_id/phase_id所用邻接阈值(30/50/100/200/300)；基线与敏感性必须可区分
+patch_id	T01-T04	string	原始图斑稳定编号(P+6位，按(Lon,Lat,OBJECTID)排序)；phase_id↔patch_id可追溯
+is_offshore	T01-T04	bool	Phase含Major_type=Ocean area的patch；可能无所属县，phase_county允许为空
 pv_county_id	T03-T04	string	土地压力责任县；不能与转化实际发生县混为一个phase_county_id
 conversion_county_id	T03-T04	string	新增耕地或土地转化实际发生县；保留跨县环带
 analysis_crs	T01-T04	EPSG_or_WKT	面积和距离结果必须可追溯到等面积或距离适用投影

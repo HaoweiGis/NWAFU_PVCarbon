@@ -45,3 +45,6 @@ desktop.ini
 *~
 .vscode/
 .idea/
+
+# Word/Office 临时锁文件
+~$*

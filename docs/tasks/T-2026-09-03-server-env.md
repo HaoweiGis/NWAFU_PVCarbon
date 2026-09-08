@@ -1,7 +1,8 @@
 # T-2026-09-03-server-env：建立并锁定计算端 Python/GIS 环境
 
-status: draft            <!-- draft | ready | running | done | blocked -->
+status: ready            <!-- draft | ready | running | done | blocked -->
 类型: 工程任务（非实验）
+执行者: Claude Code 直接执行（用户 2026-09-03 授权），非 Codex
 
 一个任务一个文件。Claude Code 起草 → 用户批准 → Codex 执行并在下方「执行记录」填写。
 

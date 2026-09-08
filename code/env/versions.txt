@@ -1,0 +1,17 @@
+date: 2026-09-08T09:48:03+08:00
+host: server
+conda 26.5.3
+GDAL 3.12.3 "Chicoutimi", released 2026/03/17
+PROJ.4 string:
+python 3.11.16
+rasterio 1.4.4 gdal 3.12.3
+geopandas 1.1.4
+pyogrio 0.12.1
+pyproj 3.7.2 PROJ 9.7.1
+shapely 2.1.2
+fiona 1.10.1
+numpy 2.4.6 pandas 3.0.5 scipy 1.17.1
+statsmodels 0.15.0
+linearmodels 7.0
+exactextract 0.3.0
+pyfixest 0.60.0

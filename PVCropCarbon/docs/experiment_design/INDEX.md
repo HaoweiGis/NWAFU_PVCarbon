@@ -32,8 +32,8 @@
 
 | 编号 | = tasks.tsv | 目标 | 前置 | 产物 | status |
 |---|---|---|---|---|---|
-| [P01](P01-源审计与网格冻结.md) | T01 | 冻结分析网格(CLCD Albers) + PV 图斑审计 + 候选县界审计（碳源 S12 审计另出） | 无（需 server-env done） | `metadata/{analysis_grid.json,frozen_sources.tsv}`、`work/patches_clean.gpkg` | **draft** |
-| [P02](P02-Patch到Site候选.md) | T02 | Patch→Site 候选（5 阈值全产）+ 巨型 Site 诊断（基线阈值选定留 S07） | P01, env | `work/site_membership.parquet`、`work/site_candidates.gpkg` | **draft** |
+| [P01](P01-源审计与网格冻结.md) | T01 | 冻结分析网格(CLCD Albers) + PV 图斑审计 + 候选县界审计（碳源 S12 审计另出） | env done ✓ | `metadata/{analysis_grid.json,frozen_sources.tsv}`、`work/patches_clean.gpkg` | **ready 候选** |
+| [P02](P02-Patch到Site候选.md) | T02 | Patch→Site 候选（5 阈值全产）+ 巨型 Site 诊断（基线阈值选定留 S07） | P01 | `work/site_membership.parquet`、`work/site_candidates.gpkg` | **draft** |
 | [P03](P03-Site到Phase.md) | T03 | Site→Phase：5 阈值完整 Phase 几何 + `phase_id↔patch_id` 明细（不筛地类、不相交县） | P02 | `work/phases.gpkg`、`work/phase_patch_map.parquet` | **draft** |
 | P04 | T04 | Phase×县相交 → T01 表：跨县多行、`phase_id` 不变、加 `intersection_pct` + `is_primary_county`（面积最大县） | P03, S06 | `outputs/phase_county.parquet` | 未起草 (BLOCKED: S06) |
 | P05 | T05 | 建设前稳定主粮（水稻/玉米/小麦 + 并集，三口径） | P03, S03–S05 | `work/staple_pre.parquet` | 未起草 (BLOCKED) |
@@ -64,7 +64,15 @@ status: 未起草 → draft → ready → running → done / blocked
 
 ## 待办
 
-1. 完成 52+10 字段分诊表（骨架在上）。
-2. **S07** Site 阈值人工样本任务卡（基线阈值选定前置）——待用户确认抽样设计。
-3. **S06** 权威县界获取任务卡——待用户选定来源（国家基础地理信息中心 / RESDC / 民政部代码表）。
-4. P04 卡片——S06 决策后起草。
+1. ~~服务器 GIS 环境~~ ✓ done 2026-09-08（`pvcarbon`，GDAL 3.12.3 / geopandas 1.1.4，见 `code/env/`）。
+2. P01 批准（`status: ready`）→ 跑 → P02 → P03（这三张不阻塞在 S06/S07）。
+3. 完成 52+10 字段分诊表（骨架在上）。
+4. **S07** Site 阈值人工样本任务卡（基线阈值选定前置）——待用户确认抽样设计。
+5. **S06** 权威县界获取任务卡——待用户选定来源（国家基础地理信息中心 / RESDC / 民政部代码表）。
+6. P04 卡片——S06 决策后起草。
+
+## 已知输入事实（P01 之后据实核对；来自 env 冒烟测试 2026-09-08）
+
+- CLCD：Albers(25/47/105,WGS84) 30 m，161378×135079，原点 (-2629624.783, 5924251.560)，
+  **nodata = 0**（类别 0 = 无数据/背景，非有效地类）。
+- PV：30,023 面，EPSG:4326，**29896 Polygon + 127 MultiPolygon**；重投影 Albers 后 Σ 面积（未 union）3712 km²。

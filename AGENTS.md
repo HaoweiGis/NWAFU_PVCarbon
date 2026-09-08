@@ -39,9 +39,11 @@
 服务器路径根：`/data/ssd/haoweimu/NWAFU_PVCarbon`（SSD，主项目与 `PVCropCarbon` 子流水线）；
 `/data/hdd/haoweimu/datasets`（HDD 公共数据集，CLCD `D001_CLCD_2000-2025`、
 ERA5-Land `D005_ERA5_Land` 等）。本地与服务器采用**相同一级目录结构**；大数据不进本地仓库。
-计算端目前没有 GDAL / rasterio / geopandas 环境，首个任务
-[docs/tasks/T-2026-09-03-server-env.md](docs/tasks/T-2026-09-03-server-env.md)
-负责建立并锁定。
+计算端 conda 环境 `pvcarbon`（`/home/server/Python_env/pvcarbon`）已建并锁定
+（[docs/tasks/T-2026-09-03-server-env.md](docs/tasks/T-2026-09-03-server-env.md)，2026-09-08：
+GDAL 3.12.3 / PROJ 9.7.1 / GEOS 3.14.1 / geopandas 1.1.4 / rasterio 1.4.4 / exactextract /
+statsmodels / linearmodels / pyfixest；锁与 sha256 在 `code/env/`）。激活：
+`source /home/server/miniconda3/etc/profile.d/conda.sh && conda activate pvcarbon`。
 
 - 原始大数据（CLCD、ERA5-Land、SoilGrids、ESA CCI Biomass、PV 图斑等）保存在服务器
   `input/` 语义位置，**只读**；本地仅保留清单、校验和与路径映射。

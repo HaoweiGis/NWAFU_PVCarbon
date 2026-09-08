@@ -47,16 +47,18 @@
 
 ## 运行环境
 
-计算端（`ssh NWAFU5090`，根 `/data/ssd/haoweimu/NWAFU_PVCarbon`）目前没有
-GDAL / rasterio / geopandas / pyproj 环境；首个任务
-[docs/tasks/T-2026-09-03-server-env.md](../docs/tasks/T-2026-09-03-server-env.md)
-负责用 conda 建立并锁定（导出带精确版本的 lock，登记 sha256）。本项目不使用 Julia。
-纯标准库的审计脚本不需要此环境。
+计算端（`ssh NWAFU5090`，根 `/data/ssd/haoweimu/NWAFU_PVCarbon`）conda 环境 `pvcarbon`
+已建并锁定（[docs/tasks/T-2026-09-03-server-env.md](../docs/tasks/T-2026-09-03-server-env.md) done，
+2026-09-08）。激活：`source /home/server/miniconda3/etc/profile.d/conda.sh && conda activate pvcarbon`。
+本项目不使用 Julia。纯标准库的审计脚本不需要此环境。
 
-- 环境隔离，不污染系统 Python，不写入 `input/`。
-- `code/env/environment.yml`（conda）+ 精确版本 lock。
-- 每次运行在运行记录里登记环境锁文件的 sha256。
-- GDAL / PROJ 版本影响重投影结果，必须锁死并在每次运行记录里登记。
+- GDAL 3.12.3 / PROJ 9.7.1 / GEOS 3.14.1 / geopandas 1.1.4 / rasterio 1.4.4 / pyogrio 0.12.1 /
+  exactextract 0.3.0 / statsmodels 0.15.0 / linearmodels 7.0 / pyfixest 0.60.0；python 3.11，
+  **numpy 2.x / pandas 3.x**（copy-on-write 默认开）。完整版本见 `code/env/versions.txt`。
+- 环境隔离，不污染系统 Python，不写入 `input/` / 源数据目录。
+- `code/env/environment.lock.yml` + `environment.lock.sha256`
+  （`739e1c84…eeda`）；每次运行在运行记录里登记该 sha256 与 GDAL/PROJ/GEOS 版本。
+- GDAL / PROJ 版本影响重投影结果，已锁死。
 
 ## 出图（figures/）
 

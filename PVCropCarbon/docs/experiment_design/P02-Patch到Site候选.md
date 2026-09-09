@@ -1,6 +1,7 @@
 # P02 Patch → Site 候选构建
 
-status: draft            <!-- draft | ready | running | done | blocked -->
+status: done            <!-- draft | ready | running | done | blocked -->
+执行者: Claude Code 直接执行（用户 2026-09-09 授权），脚本 `code/pipeline/build_phases_p01_p03.py`
 前置依赖: P01（`patches_clean.gpkg` + `analysis_grid.json` 已 done）；T-2026-09-03-server-env done
 = metadata/tasks.tsv 的 T02
 
@@ -94,28 +95,48 @@ status: draft            <!-- draft | ready | running | done | blocked -->
 
 ---
 
-## 运行记录（Codex）
+## 运行记录（Claude Code 直接执行）
 
-卡片 commit: `<短哈希>`  ·  环境: `code/env/` @ sha256 `<…>`  ·  起止: `<…>`
+env `pvcarbon` · 起止 2026-09-09 22:07–22:08 (+08) · 输入 29,979 patch（P01 去重后）·
+完整报告 `outputs/audits/p01_p03_report.md` + `outputs/audits/p02_site_diagnostics.json`。
 
-### 实际参数（与卡片的差异必须标注）
+### 与卡片的差异
 
-### 产物
+- 输入 patch 数 29,979（非 30,023，P01 去重）；`site_membership.parquet` = 29,979×5 = 149,895 行（非 150,115）。
+- 边集用 buffer(d)+`sjoin(intersects)`（= 边界距离 ≤ d）；连通分量用 `scipy.csgraph`。
+- `site_id = S{d:03d}_{seq:06d}`，seq 按分量最小成员位置排序（确定性）。
 
-| 文件 | SHA256 | 行数/尺寸 |
-|---|---|---|
+### 产物（服务器）
+
+| 文件 | 说明 |
+|---|---|
+| `work/site_membership.parquet` | 149,895 行 `patch_id × site_threshold_m → site_id` |
+| `work/phases.gpkg` 中间层 / `outputs/audits/p02_site_diagnostics.json` | 每阈值 Site 数、分位数、Top25 巨型 Site（经纬度） |
 
 ### 验收门槛结果
 
-- [ ]
+- [x] `site_membership` 每 `(patch_id, threshold)` 唯一；每阈值全覆盖 29,979
+- [x] 阈值越大 Site 数单调不增：30→300 = 24560 / 18273 / 12590 / 9288 / 8160
+- [x] 每阈值 Σ`patch_count` = 29,979
+- [x] `site_id` 确定性（排序键固定）
+- [x] 诊断报告含 5 阈值分位数 + Top 巨型 Site
 
-### BLOCKED / 异常
+### Site 诊断（关键）
+
+| 阈值m | Site数 | 单patch | maxPatch | hull p99 km² | hull max km² | Site≥5年 | 巨型>50km² |
+|---|---|---|---|---|---|---|---|
+| 30 | 24560 | 20972 | 21 | 2.52 | 21.8 | 7 | 0 |
+| 50 | 18273 | 12970 | 34 | 3.15 | 21.8 | 66 | 0 |
+| 100 | 12590 | 7381 | 77 | 4.78 | 29.0 | 213 | 0 |
+| 200 | 9288 | 4898 | 138 | 6.56 | 46.8 | 335 | 0 |
+| 300 | 8160 | 4185 | 140 | 8.13 | 102.6 | 397 | 2 |
+
+Top 巨型 Site 集中在青海共和/塔拉滩(lon≈100.5, lat≈36)、甘肃武威(102,38.6)、
+新疆哈密(90.3,44)、内蒙库布其/达拉特(109.7,40.3)——均为真实连片光伏基地。
 
 ### 给 Claude Code 的问题
 
-1. 巨型 Site 分布如何？是否需要在 P03 前引入 Site 直径/面积上限或二次切分（决策 #2「看了再定」）。
-
-> 完成后：`experiment_registry.csv` 加一行；本文件 status 改 done/blocked；同步 `tasks.tsv` T02。
+1. 巨型 Site（决策 #2「看了再定」）——见解读。
 
 ---
 
@@ -123,14 +144,17 @@ status: draft            <!-- draft | ready | running | done | blocked -->
 
 ### 回答了什么
 
-<对照 §1：5 阈值 Site 候选是否干净；巨型 Site 严重程度。>
+5 阈值 Site 候选干净。**链式合并不是问题**：30–200 m 下 0 个 >50 km² 的 Site；
+300 m 才出现 2 个（共和塔拉滩 102 km²、武威 51 km²），且这两个本就是单一基地分期建设，
+符合 Site→Phase 模型。max span 30 m 已达 10.8 km（少数几个 2-patch 的远距离 Site，
+需在 S07 样本里确认是否误并）。
 
 ### 是否触发停止/降级条件
 
-- [ ] 巨型 Site 可接受 → P03 直接用连通分量（方案 a）
-- [ ] 巨型 Site 过多 → 先补一张"Site 切分规则"卡片（方案 b），再 P03
+- [x] **巨型 Site 可接受 → P03 直接用连通分量（方案 a）**，不引入直径/面积上限。
+- [ ] 待 S07：核对 30 m 下 hull max 21.8 km / span 10.8 km 的少数 2-patch Site 是否误并。
 
 ### 下一步
 
-- [ ] 起草 P03（Site→Phase）
-- [ ] 催 S07 人工样本（基线阈值选定的前置）
+- [x] P03 已随本次执行
+- [ ] S07 人工样本（基线阈值 + 误并核对）

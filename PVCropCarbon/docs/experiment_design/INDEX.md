@@ -32,9 +32,9 @@
 
 | 编号 | = tasks.tsv | 目标 | 前置 | 产物 | status |
 |---|---|---|---|---|---|
-| [P01](P01-源审计与网格冻结.md) | T01 | 冻结分析网格(CLCD Albers) + PV 图斑审计 + 候选县界审计（碳源 S12 审计另出） | env done ✓ | `metadata/{analysis_grid.json,frozen_sources.tsv}`、`work/patches_clean.gpkg` | **ready 候选** |
-| [P02](P02-Patch到Site候选.md) | T02 | Patch→Site 候选（5 阈值全产）+ 巨型 Site 诊断（基线阈值选定留 S07） | P01 | `work/site_membership.parquet`、`work/site_candidates.gpkg` | **draft** |
-| [P03](P03-Site到Phase.md) | T03 | Site→Phase：5 阈值完整 Phase 几何 + `phase_id↔patch_id` 明细（不筛地类、不相交县） | P02 | `work/phases.gpkg`、`work/phase_patch_map.parquet` | **draft** |
+| [P01](P01-源审计与网格冻结.md) | T01 | 冻结分析网格(CLCD Albers) + PV 图斑审计（候选县界审计 + frozen_sources.tsv 顺延 P04 前） | env done ✓ | `metadata/analysis_grid.json`、`work/patches_clean.gpkg`（29,979 patch） | **done（部分）** 2026-09-09 |
+| [P02](P02-Patch到Site候选.md) | T02 | Patch→Site 候选（5 阈值全产）+ 巨型 Site 诊断 | P01 | `work/site_membership.parquet`（149,895 行） | **done** 2026-09-09 |
+| [P03](P03-Site到Phase.md) | T03 | Site→Phase：5 阈值完整 Phase 几何 → **建设批次矢量 shp** | P02 | `work/phases.gpkg`、`outputs/phase_vector/phases_d{30,50,100,200,300}.shp` | **done** 2026-09-09 |
 | P04 | T04 | Phase×县相交 → T01 表：跨县多行、`phase_id` 不变、加 `intersection_pct` + `is_primary_county`（面积最大县） | P03, S06 | `outputs/phase_county.parquet` | 未起草 (BLOCKED: S06) |
 | P05 | T05 | 建设前稳定主粮（水稻/玉米/小麦 + 并集，三口径） | P03, S03–S05 | `work/staple_pre.parquet` | 未起草 (BLOCKED) |
 | P06 | T06 | 建设后作物持续/退出（两个完整年，类别互斥，作物替代 ≠ 主粮退出） | P05 | `outputs/crop_exit.parquet` | 未起草 (BLOCKED) |
@@ -59,20 +59,25 @@ status: 未起草 → draft → ready → running → done / blocked
   与 `is_primary_county`（相交面积最大的县 = true），见 `required_extra_fields.tsv`。
 - Patch→Site = 边界间距 ≤ 阈值的连通分量（Albers 下量）；5 阈值全产，基线选定等 S07。
 - 巨型 Site（连片光伏基地）处理：**看 P02 诊断分布再定**（接受基地=一个 Site vs 加直径/面积上限）。
-- 全部 30,023 patch 进（含非耕地、含 95 个 `Ocean area`；海上 Phase 打 `is_offshore`，`phase_county` 允许空）。
+- 全部 patch 进（含非耕地、含 `Ocean area`；海上 Phase 打 `offshore`）。**调整**：P01 发现 43 组
+  完全重复几何（87 patch），去 44 个 → **29,979 patch**（"全进"= 全部去重后 patch）。
 - Phase 分年按修正后 `inst_year`；精确 `inst_date` 留字段供 pre/post 窗口。
+
+## P01–P03 结果（2026-09-09，Claude Code 直接执行；报告 `outputs/audits/p01_p03_report.md`）
+
+- **分析网格冻结**：`metadata/analysis_grid.json` = CLCD v01 原生 Albers 网格（26 幅一致）。
+- **`PV_Area` 单位 = km²**（比值中位数 1.0000 确认）；3 条日期异常已在派生层修正。
+- **链式合并不是问题**：30–200 m 下 0 个 >50 km² 的巨型 Site；300 m 才 2 个（真实基地）。
+  → 采用**方案 a：连通分量直接作 Site**，不加直径/面积上限。
+- **建设批次矢量已出**：`outputs/phase_vector/phases_d{30,50,100,200,300}.shp`（16 字段，
+  按 `phase_id` 加下游属性）。Phase 数 30m→300m = 26688 / 22414 / 18059 / 15154 / 14048。
+- 基线阈值诊断倾向 **50–100 m**，最终等 S07。
 
 ## 待办
 
-1. ~~服务器 GIS 环境~~ ✓ done 2026-09-08（`pvcarbon`，GDAL 3.12.3 / geopandas 1.1.4，见 `code/env/`）。
-2. P01 批准（`status: ready`）→ 跑 → P02 → P03（这三张不阻塞在 S06/S07）。
+1. ~~服务器 GIS 环境~~ ✓ · ~~P01/P02/P03~~ ✓（2026-09-09）。
+2. AGENTS 冻结决策 #2 措辞转正（去"待 P01 核对"）。
 3. 完成 52+10 字段分诊表（骨架在上）。
-4. **S07** Site 阈值人工样本任务卡（基线阈值选定前置）——待用户确认抽样设计。
+4. **S07** Site 阈值人工样本任务卡（基线阈值 + 少数远距离 2-patch Site 误并核对）——待用户确认抽样设计。
 5. **S06** 权威县界获取任务卡——待用户选定来源（国家基础地理信息中心 / RESDC / 民政部代码表）。
-6. P04 卡片——S06 决策后起草。
-
-## 已知输入事实（P01 之后据实核对；来自 env 冒烟测试 2026-09-08）
-
-- CLCD：Albers(25/47/105,WGS84) 30 m，161378×135079，原点 (-2629624.783, 5924251.560)，
-  **nodata = 0**（类别 0 = 无数据/背景，非有效地类）。
-- PV：30,023 面，EPSG:4326，**29896 Polygon + 127 MultiPolygon**；重投影 Albers 后 Σ 面积（未 union）3712 km²。
+6. P04 卡片——S06 决策后起草；一并补候选县界审计 + `frozen_sources.tsv` + CLCD SHA-256 比对。

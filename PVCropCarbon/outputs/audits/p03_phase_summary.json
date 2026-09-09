@@ -1,0 +1,137 @@
+{
+  "30": {
+    "n_phases": 26688,
+    "sum_patch_cnt": 29979,
+    "phase_area_km2": {
+      "p50": 0.024578822515615946,
+      "p90": 0.3337446679609975,
+      "p99": 1.75924918624131,
+      "max": 16.39915893749675,
+      "total": 3710.8998166436695
+    },
+    "n_single_patch": 24186,
+    "n_multi_part": 2588,
+    "n_offshore": 95,
+    "max_overlap_r": 0.3631534765025083,
+    "n_overlap_gt5pct": 1,
+    "mtype_mode_counts": {
+      "Cropland": 10194,
+      "Grassland": 8010,
+      "Woodland": 3428,
+      "Unused land": 1737,
+      "Built-up land": 1725,
+      "Water surface": 1499,
+      "Ocean area": 95
+    },
+    "n_crop_dominant": 10193,
+    "shp": "/data/ssd/haoweimu/NWAFU_PVCarbon/PVCropCarbon/outputs/phase_vector/phases_d30.shp"
+  },
+  "50": {
+    "n_phases": 22414,
+    "sum_patch_cnt": 29979,
+    "phase_area_km2": {
+      "p50": 0.03503236101679981,
+      "p90": 0.4026058092844674,
+      "p99": 2.062354144232431,
+      "max": 16.39915893749675,
+      "total": 3710.8998166436695
+    },
+    "n_single_patch": 17940,
+    "n_multi_part": 4553,
+    "n_offshore": 91,
+    "max_overlap_r": 0.3631534765025083,
+    "n_overlap_gt5pct": 1,
+    "mtype_mode_counts": {
+      "Cropland": 8519,
+      "Grassland": 6640,
+      "Woodland": 2844,
+      "Unused land": 1560,
+      "Built-up land": 1513,
+      "Water surface": 1248,
+      "Ocean area": 90
+    },
+    "n_crop_dominant": 8518,
+    "shp": "/data/ssd/haoweimu/NWAFU_PVCarbon/PVCropCarbon/outputs/phase_vector/phases_d50.shp"
+  },
+  "100": {
+    "n_phases": 18059,
+    "sum_patch_cnt": 29979,
+    "phase_area_km2": {
+      "p50": 0.05026338828685946,
+      "p90": 0.4925604540021103,
+      "p99": 2.3410185549757374,
+      "max": 16.39915893749675,
+      "total": 3710.89981664367
+    },
+    "n_single_patch": 12691,
+    "n_multi_part": 5432,
+    "n_offshore": 83,
+    "max_overlap_r": 0.3631534765025083,
+    "n_overlap_gt5pct": 1,
+    "mtype_mode_counts": {
+      "Cropland": 6997,
+      "Grassland": 4990,
+      "Woodland": 2187,
+      "Built-up land": 1382,
+      "Unused land": 1338,
+      "Water surface": 1084,
+      "Ocean area": 81
+    },
+    "n_crop_dominant": 6993,
+    "shp": "/data/ssd/haoweimu/NWAFU_PVCarbon/PVCropCarbon/outputs/phase_vector/phases_d100.shp"
+  },
+  "200": {
+    "n_phases": 15154,
+    "sum_patch_cnt": 29979,
+    "phase_area_km2": {
+      "p50": 0.06454242718408817,
+      "p90": 0.5682126285999618,
+      "p99": 2.7177906211492666,
+      "max": 16.39915893749675,
+      "total": 3710.89981664367
+    },
+    "n_single_patch": 9847,
+    "n_multi_part": 5353,
+    "n_offshore": 82,
+    "max_overlap_r": 0.3631534765025083,
+    "n_overlap_gt5pct": 1,
+    "mtype_mode_counts": {
+      "Cropland": 6006,
+      "Grassland": 3874,
+      "Woodland": 1730,
+      "Built-up land": 1281,
+      "Unused land": 1179,
+      "Water surface": 1004,
+      "Ocean area": 80
+    },
+    "n_crop_dominant": 6000,
+    "shp": "/data/ssd/haoweimu/NWAFU_PVCarbon/PVCropCarbon/outputs/phase_vector/phases_d200.shp"
+  },
+  "300": {
+    "n_phases": 14048,
+    "sum_patch_cnt": 29979,
+    "phase_area_km2": {
+      "p50": 0.07062653123605712,
+      "p90": 0.6046625430445103,
+      "p99": 2.878681130263733,
+      "max": 23.71323449470028,
+      "total": 3710.8998166436695
+    },
+    "n_single_patch": 8892,
+    "n_multi_part": 5200,
+    "n_offshore": 79,
+    "max_overlap_r": 0.3631534765025083,
+    "n_overlap_gt5pct": 1,
+    "mtype_mode_counts": {
+      "Cropland": 5632,
+      "Grassland": 3452,
+      "Woodland": 1560,
+      "Built-up land": 1243,
+      "Unused land": 1120,
+      "Water surface": 964,
+      "Ocean area": 77
+    },
+    "n_crop_dominant": 5623,
+    "shp": "/data/ssd/haoweimu/NWAFU_PVCarbon/PVCropCarbon/outputs/phase_vector/phases_d300.shp"
+  }
+}

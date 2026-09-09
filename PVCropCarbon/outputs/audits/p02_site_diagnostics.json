@@ -1,0 +1,1267 @@
+{
+  "30": {
+    "n_sites": 24560,
+    "n_single_patch": 20972,
+    "patch_count": {
+      "p50": 1.0,
+      "p90": 2.0,
+      "p99": 4.0,
+      "max": 21.0
+    },
+    "hull_km2": {
+      "p50": 0.03475527449469641,
+      "p90": 0.4830089962610531,
+      "p99": 2.5169731919980394,
+      "max": 21.80761209200578
+    },
+    "span_km": {
+      "p50": 0.343851251816106,
+      "p90": 1.281037547894922,
+      "p99": 2.9835983796380017,
+      "max": 10.847702900388828
+    },
+    "n_sites_ge3y": 271,
+    "n_sites_ge5y": 7,
+    "n_mega_gt50km2": 0,
+    "n_mega_gt10km_span": 1,
+    "top25": [
+      {
+        "site_id": "S030_001279",
+        "patch_count": 2,
+        "hull_km2": 21.808,
+        "span_km": 8.479,
+        "n_years": 1,
+        "lon": 100.514,
+        "lat": 36.024
+      },
+      {
+        "site_id": "S030_000698",
+        "patch_count": 2,
+        "hull_km2": 21.521,
+        "span_km": 8.515,
+        "n_years": 2,
+        "lon": 95.148,
+        "lat": 36.394
+      },
+      {
+        "site_id": "S030_003538",
+        "patch_count": 3,
+        "hull_km2": 20.147,
+        "span_km": 7.514,
+        "n_years": 1,
+        "lon": 105.508,
+        "lat": 37.548
+      },
+      {
+        "site_id": "S030_004712",
+        "patch_count": 5,
+        "hull_km2": 16.22,
+        "span_km": 6.614,
+        "n_years": 3,
+        "lon": 107.0,
+        "lat": 37.981
+      },
+      {
+        "site_id": "S030_013564",
+        "patch_count": 1,
+        "hull_km2": 14.233,
+        "span_km": 6.386,
+        "n_years": 1,
+        "lon": 114.446,
+        "lat": 41.355
+      },
+      {
+        "site_id": "S030_004469",
+        "patch_count": 5,
+        "hull_km2": 13.897,
+        "span_km": 7.79,
+        "n_years": 2,
+        "lon": 106.671,
+        "lat": 38.678
+      },
+      {
+        "site_id": "S030_004458",
+        "patch_count": 1,
+        "hull_km2": 13.276,
+        "span_km": 6.388,
+        "n_years": 1,
+        "lon": 106.634,
+        "lat": 38.521
+      },
+      {
+        "site_id": "S030_003029",
+        "patch_count": 6,
+        "hull_km2": 13.209,
+        "span_km": 7.1,
+        "n_years": 3,
+        "lon": 105.026,
+        "lat": 37.55
+      },
+      {
+        "site_id": "S030_004530",
+        "patch_count": 2,
+        "hull_km2": 12.971,
+        "span_km": 9.039,
+        "n_years": 2,
+        "lon": 106.76,
+        "lat": 38.007
+      },
+      {
+        "site_id": "S030_001272",
+        "patch_count": 4,
+        "hull_km2": 11.797,
+        "span_km": 10.848,
+        "n_years": 4,
+        "lon": 100.52,
+        "lat": 36.165
+      },
+      {
+        "site_id": "S030_000406",
+        "patch_count": 4,
+        "hull_km2": 11.679,
+        "span_km": 6.584,
+        "n_years": 1,
+        "lon": 88.755,
+        "lat": 44.067
+      },
+      {
+        "site_id": "S030_000864",
+        "patch_count": 1,
+        "hull_km2": 11.629,
+        "span_km": 5.985,
+        "n_years": 1,
+        "lon": 97.294,
+        "lat": 37.382
+      },
+      {
+        "site_id": "S030_001306",
+        "patch_count": 4,
+        "hull_km2": 11.605,
+        "span_km": 6.359,
+        "n_years": 3,
+        "lon": 100.572,
+        "lat": 36.115
+      },
+      {
+        "site_id": "S030_004528",
+        "patch_count": 1,
+        "hull_km2": 10.753,
+        "span_km": 5.61,
+        "n_years": 1,
+        "lon": 106.756,
+        "lat": 37.943
+      },
+      {
+        "site_id": "S030_000493",
+        "patch_count": 1,
+        "hull_km2": 9.746,
+        "span_km": 5.245,
+        "n_years": 1,
+        "lon": 90.322,
+        "lat": 44.042
+      },
+      {
+        "site_id": "S030_001182",
+        "patch_count": 1,
+        "hull_km2": 9.326,
+        "span_km": 6.496,
+        "n_years": 1,
+        "lon": 100.281,
+        "lat": 36.064
+      },
+      {
+        "site_id": "S030_000585",
+        "patch_count": 1,
+        "hull_km2": 8.983,
+        "span_km": 4.649,
+        "n_years": 1,
+        "lon": 93.388,
+        "lat": 36.773
+      },
+      {
+        "site_id": "S030_010561",
+        "patch_count": 1,
+        "hull_km2": 8.373,
+        "span_km": 5.703,
+        "n_years": 1,
+        "lon": 113.516,
+        "lat": 31.761
+      },
+      {
+        "site_id": "S030_005503",
+        "patch_count": 4,
+        "hull_km2": 8.165,
+        "span_km": 4.65,
+        "n_years": 3,
+        "lon": 109.681,
+        "lat": 40.262
+      },
+      {
+        "site_id": "S030_000485",
+        "patch_count": 3,
+        "hull_km2": 8.161,
+        "span_km": 6.501,
+        "n_years": 2,
+        "lon": 90.307,
+        "lat": 44.058
+      },
+      {
+        "site_id": "S030_005508",
+        "patch_count": 5,
+        "hull_km2": 8.125,
+        "span_km": 5.175,
+        "n_years": 3,
+        "lon": 109.69,
+        "lat": 38.81
+      },
+      {
+        "site_id": "S030_000692",
+        "patch_count": 3,
+        "hull_km2": 7.909,
+        "span_km": 4.56,
+        "n_years": 3,
+        "lon": 95.111,
+        "lat": 36.385
+      },
+      {
+        "site_id": "S030_023996",
+        "patch_count": 1,
+        "hull_km2": 7.801,
+        "span_km": 5.741,
+        "n_years": 1,
+        "lon": 123.573,
+        "lat": 45.361
+      },
+      {
+        "site_id": "S030_024262",
+        "patch_count": 1,
+        "hull_km2": 7.673,
+        "span_km": 5.395,
+        "n_years": 1,
+        "lon": 125.157,
+        "lat": 46.225
+      },
+      {
+        "site_id": "S030_003030",
+        "patch_count": 3,
+        "hull_km2": 7.603,
+        "span_km": 4.93,
+        "n_years": 2,
+        "lon": 105.053,
+        "lat": 37.573
+      }
+    ]
+  },
+  "50": {
+    "n_sites": 18273,
+    "n_single_patch": 12970,
+    "patch_count": {
+      "p50": 1.0,
+      "p90": 3.0,
+      "p99": 8.0,
+      "max": 34.0
+    },
+    "hull_km2": {
+      "p50": 0.06285855220267125,
+      "p90": 0.6774327088847962,
+      "p99": 3.1524725739278763,
+      "max": 21.80761209200578
+    },
+    "span_km": {
+      "p50": 0.45368065525938145,
+      "p90": 1.532610139353339,
+      "p99": 3.41003927351136,
+      "max": 10.87134526826348
+    },
+    "n_sites_ge3y": 827,
+    "n_sites_ge5y": 66,
+    "n_mega_gt50km2": 0,
+    "n_mega_gt10km_span": 1,
+    "top25": [
+      {
+        "site_id": "S050_001026",
+        "patch_count": 2,
+        "hull_km2": 21.808,
+        "span_km": 8.479,
+        "n_years": 1,
+        "lon": 100.514,
+        "lat": 36.024
+      },
+      {
+        "site_id": "S050_000573",
+        "patch_count": 3,
+        "hull_km2": 21.543,
+        "span_km": 8.53,
+        "n_years": 3,
+        "lon": 95.148,
+        "lat": 36.394
+      },
+      {
+        "site_id": "S050_002637",
+        "patch_count": 6,
+        "hull_km2": 20.147,
+        "span_km": 7.514,
+        "n_years": 3,
+        "lon": 105.508,
+        "lat": 37.548
+      },
+      {
+        "site_id": "S050_001044",
+        "patch_count": 5,
+        "hull_km2": 19.107,
+        "span_km": 7.1,
+        "n_years": 4,
+        "lon": 100.57,
+        "lat": 36.108
+      },
+      {
+        "site_id": "S050_000413",
+        "patch_count": 6,
+        "hull_km2": 18.508,
+        "span_km": 7.578,
+        "n_years": 4,
+        "lon": 90.314,
+        "lat": 44.049
+      },
+      {
+        "site_id": "S050_003437",
+        "patch_count": 8,
+        "hull_km2": 16.269,
+        "span_km": 6.635,
+        "n_years": 4,
+        "lon": 107.0,
+        "lat": 37.981
+      },
+      {
+        "site_id": "S050_010001",
+        "patch_count": 1,
+        "hull_km2": 14.233,
+        "span_km": 6.386,
+        "n_years": 1,
+        "lon": 114.446,
+        "lat": 41.355
+      },
+      {
+        "site_id": "S050_003271",
+        "patch_count": 7,
+        "hull_km2": 14.075,
+        "span_km": 8.035,
+        "n_years": 3,
+        "lon": 106.671,
+        "lat": 38.678
+      },
+      {
+        "site_id": "S050_003320",
+        "patch_count": 4,
+        "hull_km2": 13.77,
+        "span_km": 9.483,
+        "n_years": 3,
+        "lon": 106.76,
+        "lat": 38.008
+      },
+      {
+        "site_id": "S050_000697",
+        "patch_count": 2,
+        "hull_km2": 13.725,
+        "span_km": 5.985,
+        "n_years": 2,
+        "lon": 97.292,
+        "lat": 37.379
+      },
+      {
+        "site_id": "S050_003260",
+        "patch_count": 1,
+        "hull_km2": 13.276,
+        "span_km": 6.388,
+        "n_years": 1,
+        "lon": 106.634,
+        "lat": 38.521
+      },
+      {
+        "site_id": "S050_002269",
+        "patch_count": 6,
+        "hull_km2": 13.209,
+        "span_km": 7.1,
+        "n_years": 3,
+        "lon": 105.026,
+        "lat": 37.55
+      },
+      {
+        "site_id": "S050_001019",
+        "patch_count": 5,
+        "hull_km2": 11.975,
+        "span_km": 10.871,
+        "n_years": 4,
+        "lon": 100.521,
+        "lat": 36.166
+      },
+      {
+        "site_id": "S050_000343",
+        "patch_count": 5,
+        "hull_km2": 11.679,
+        "span_km": 6.584,
+        "n_years": 2,
+        "lon": 88.755,
+        "lat": 44.067
+      },
+      {
+        "site_id": "S050_003779",
+        "patch_count": 4,
+        "hull_km2": 10.936,
+        "span_km": 5.683,
+        "n_years": 3,
+        "lon": 108.774,
+        "lat": 40.444
+      },
+      {
+        "site_id": "S050_003318",
+        "patch_count": 1,
+        "hull_km2": 10.753,
+        "span_km": 5.61,
+        "n_years": 1,
+        "lon": 106.756,
+        "lat": 37.943
+      },
+      {
+        "site_id": "S050_000947",
+        "patch_count": 1,
+        "hull_km2": 9.326,
+        "span_km": 6.496,
+        "n_years": 1,
+        "lon": 100.281,
+        "lat": 36.064
+      },
+      {
+        "site_id": "S050_004946",
+        "patch_count": 6,
+        "hull_km2": 9.127,
+        "span_km": 5.821,
+        "n_years": 4,
+        "lon": 111.348,
+        "lat": 40.727
+      },
+      {
+        "site_id": "S050_000490",
+        "patch_count": 1,
+        "hull_km2": 8.983,
+        "span_km": 4.649,
+        "n_years": 1,
+        "lon": 93.388,
+        "lat": 36.773
+      },
+      {
+        "site_id": "S050_007793",
+        "patch_count": 1,
+        "hull_km2": 8.373,
+        "span_km": 5.703,
+        "n_years": 1,
+        "lon": 113.516,
+        "lat": 31.761
+      },
+      {
+        "site_id": "S050_017814",
+        "patch_count": 2,
+        "hull_km2": 8.339,
+        "span_km": 5.815,
+        "n_years": 2,
+        "lon": 123.574,
+        "lat": 45.363
+      },
+      {
+        "site_id": "S050_004049",
+        "patch_count": 8,
+        "hull_km2": 8.165,
+        "span_km": 4.65,
+        "n_years": 3,
+        "lon": 109.681,
+        "lat": 40.262
+      },
+      {
+        "site_id": "S050_004064",
+        "patch_count": 6,
+        "hull_km2": 8.125,
+        "span_km": 5.175,
+        "n_years": 4,
+        "lon": 109.69,
+        "lat": 38.81
+      },
+      {
+        "site_id": "S050_002270",
+        "patch_count": 4,
+        "hull_km2": 8.008,
+        "span_km": 5.002,
+        "n_years": 3,
+        "lon": 105.054,
+        "lat": 37.572
+      },
+      {
+        "site_id": "S050_000568",
+        "patch_count": 3,
+        "hull_km2": 7.909,
+        "span_km": 4.56,
+        "n_years": 3,
+        "lon": 95.111,
+        "lat": 36.385
+      }
+    ]
+  },
+  "100": {
+    "n_sites": 12590,
+    "n_single_patch": 7381,
+    "patch_count": {
+      "p50": 1.0,
+      "p90": 5.0,
+      "p99": 15.0,
+      "max": 77.0
+    },
+    "hull_km2": {
+      "p50": 0.12252354797600568,
+      "p90": 1.038300584034175,
+      "p99": 4.780857589265171,
+      "max": 29.025737489541985
+    },
+    "span_km": {
+      "p50": 0.6467111257561444,
+      "p90": 1.9238241434977712,
+      "p99": 4.157905782989103,
+      "max": 10.87134526826348
+    },
+    "n_sites_ge3y": 1270,
+    "n_sites_ge5y": 213,
+    "n_mega_gt50km2": 0,
+    "n_mega_gt10km_span": 1,
+    "top25": [
+      {
+        "site_id": "S100_000328",
+        "patch_count": 14,
+        "hull_km2": 29.026,
+        "span_km": 9.388,
+        "n_years": 5,
+        "lon": 90.317,
+        "lat": 44.039
+      },
+      {
+        "site_id": "S100_002796",
+        "patch_count": 17,
+        "hull_km2": 21.906,
+        "span_km": 7.783,
+        "n_years": 3,
+        "lon": 109.684,
+        "lat": 40.278
+      },
+      {
+        "site_id": "S100_000762",
+        "patch_count": 2,
+        "hull_km2": 21.808,
+        "span_km": 8.479,
+        "n_years": 1,
+        "lon": 100.514,
+        "lat": 36.024
+      },
+      {
+        "site_id": "S100_000452",
+        "patch_count": 3,
+        "hull_km2": 21.543,
+        "span_km": 8.53,
+        "n_years": 3,
+        "lon": 95.148,
+        "lat": 36.394
+      },
+      {
+        "site_id": "S100_000771",
+        "patch_count": 6,
+        "hull_km2": 20.659,
+        "span_km": 7.564,
+        "n_years": 4,
+        "lon": 100.567,
+        "lat": 36.107
+      },
+      {
+        "site_id": "S100_001793",
+        "patch_count": 6,
+        "hull_km2": 20.147,
+        "span_km": 7.514,
+        "n_years": 3,
+        "lon": 105.508,
+        "lat": 37.548
+      },
+      {
+        "site_id": "S100_002324",
+        "patch_count": 8,
+        "hull_km2": 16.269,
+        "span_km": 6.635,
+        "n_years": 4,
+        "lon": 107.0,
+        "lat": 37.981
+      },
+      {
+        "site_id": "S100_002200",
+        "patch_count": 3,
+        "hull_km2": 16.251,
+        "span_km": 7.653,
+        "n_years": 2,
+        "lon": 106.634,
+        "lat": 38.517
+      },
+      {
+        "site_id": "S100_000389",
+        "patch_count": 3,
+        "hull_km2": 14.788,
+        "span_km": 6.475,
+        "n_years": 2,
+        "lon": 93.389,
+        "lat": 36.78
+      },
+      {
+        "site_id": "S100_000404",
+        "patch_count": 11,
+        "hull_km2": 14.633,
+        "span_km": 6.526,
+        "n_years": 2,
+        "lon": 93.899,
+        "lat": 42.242
+      },
+      {
+        "site_id": "S100_006710",
+        "patch_count": 1,
+        "hull_km2": 14.233,
+        "span_km": 6.386,
+        "n_years": 1,
+        "lon": 114.446,
+        "lat": 41.355
+      },
+      {
+        "site_id": "S100_002207",
+        "patch_count": 10,
+        "hull_km2": 14.075,
+        "span_km": 8.035,
+        "n_years": 5,
+        "lon": 106.671,
+        "lat": 38.678
+      },
+      {
+        "site_id": "S100_000466",
+        "patch_count": 5,
+        "hull_km2": 13.959,
+        "span_km": 6.865,
+        "n_years": 3,
+        "lon": 95.245,
+        "lat": 36.412
+      },
+      {
+        "site_id": "S100_002243",
+        "patch_count": 4,
+        "hull_km2": 13.77,
+        "span_km": 9.483,
+        "n_years": 3,
+        "lon": 106.76,
+        "lat": 38.008
+      },
+      {
+        "site_id": "S100_000540",
+        "patch_count": 2,
+        "hull_km2": 13.725,
+        "span_km": 5.985,
+        "n_years": 2,
+        "lon": 97.292,
+        "lat": 37.379
+      },
+      {
+        "site_id": "S100_001575",
+        "patch_count": 6,
+        "hull_km2": 13.209,
+        "span_km": 7.1,
+        "n_years": 3,
+        "lon": 105.026,
+        "lat": 37.55
+      },
+      {
+        "site_id": "S100_000755",
+        "patch_count": 5,
+        "hull_km2": 11.975,
+        "span_km": 10.871,
+        "n_years": 4,
+        "lon": 100.521,
+        "lat": 36.166
+      },
+      {
+        "site_id": "S100_000272",
+        "patch_count": 6,
+        "hull_km2": 11.829,
+        "span_km": 6.584,
+        "n_years": 3,
+        "lon": 88.755,
+        "lat": 44.067
+      },
+      {
+        "site_id": "S100_012155",
+        "patch_count": 2,
+        "hull_km2": 11.636,
+        "span_km": 6.186,
+        "n_years": 1,
+        "lon": 122.99,
+        "lat": 45.883
+      },
+      {
+        "site_id": "S100_000398",
+        "patch_count": 11,
+        "hull_km2": 11.538,
+        "span_km": 6.554,
+        "n_years": 3,
+        "lon": 93.629,
+        "lat": 43.04
+      },
+      {
+        "site_id": "S100_002321",
+        "patch_count": 7,
+        "hull_km2": 11.513,
+        "span_km": 5.567,
+        "n_years": 3,
+        "lon": 106.96,
+        "lat": 37.989
+      },
+      {
+        "site_id": "S100_009500",
+        "patch_count": 77,
+        "hull_km2": 11.397,
+        "span_km": 5.163,
+        "n_years": 9,
+        "lon": 117.664,
+        "lat": 35.918
+      },
+      {
+        "site_id": "S100_000990",
+        "patch_count": 3,
+        "hull_km2": 11.08,
+        "span_km": 5.961,
+        "n_years": 3,
+        "lon": 102.127,
+        "lat": 38.603
+      },
+      {
+        "site_id": "S100_001028",
+        "patch_count": 4,
+        "hull_km2": 10.984,
+        "span_km": 7.174,
+        "n_years": 3,
+        "lon": 102.264,
+        "lat": 38.096
+      },
+      {
+        "site_id": "S100_002572",
+        "patch_count": 5,
+        "hull_km2": 10.936,
+        "span_km": 5.683,
+        "n_years": 3,
+        "lon": 108.774,
+        "lat": 40.444
+      }
+    ]
+  },
+  "200": {
+    "n_sites": 9288,
+    "n_single_patch": 4898,
+    "patch_count": {
+      "p50": 1.0,
+      "p90": 7.0,
+      "p99": 24.0,
+      "max": 138.0
+    },
+    "hull_km2": {
+      "p50": 0.21247290841212313,
+      "p90": 1.4972365356208899,
+      "p99": 6.558041966165268,
+      "max": 46.83062800693845
+    },
+    "span_km": {
+      "p50": 0.8535744791505663,
+      "p90": 2.3388964220976054,
+      "p99": 5.000401018735735,
+      "max": 14.152683733857915
+    },
+    "n_sites_ge3y": 1442,
+    "n_sites_ge5y": 335,
+    "n_mega_gt50km2": 0,
+    "n_mega_gt10km_span": 6,
+    "top25": [
+      {
+        "site_id": "S200_000745",
+        "patch_count": 21,
+        "hull_km2": 46.831,
+        "span_km": 11.72,
+        "n_years": 5,
+        "lon": 102.143,
+        "lat": 38.606
+      },
+      {
+        "site_id": "S200_000614",
+        "patch_count": 27,
+        "hull_km2": 43.921,
+        "span_km": 12.341,
+        "n_years": 8,
+        "lon": 100.602,
+        "lat": 36.166
+      },
+      {
+        "site_id": "S200_000598",
+        "patch_count": 14,
+        "hull_km2": 38.316,
+        "span_km": 11.424,
+        "n_years": 6,
+        "lon": 100.546,
+        "lat": 36.11
+      },
+      {
+        "site_id": "S200_001999",
+        "patch_count": 25,
+        "hull_km2": 32.575,
+        "span_km": 9.352,
+        "n_years": 4,
+        "lon": 109.678,
+        "lat": 40.275
+      },
+      {
+        "site_id": "S200_000281",
+        "patch_count": 16,
+        "hull_km2": 32.339,
+        "span_km": 10.09,
+        "n_years": 5,
+        "lon": 90.317,
+        "lat": 44.04
+      },
+      {
+        "site_id": "S200_000369",
+        "patch_count": 17,
+        "hull_km2": 32.323,
+        "span_km": 10.533,
+        "n_years": 6,
+        "lon": 94.483,
+        "lat": 40.109
+      },
+      {
+        "site_id": "S200_000380",
+        "patch_count": 8,
+        "hull_km2": 28.264,
+        "span_km": 8.783,
+        "n_years": 6,
+        "lon": 95.138,
+        "lat": 36.391
+      },
+      {
+        "site_id": "S200_000333",
+        "patch_count": 8,
+        "hull_km2": 27.321,
+        "span_km": 9.372,
+        "n_years": 3,
+        "lon": 93.386,
+        "lat": 36.787
+      },
+      {
+        "site_id": "S200_001264",
+        "patch_count": 9,
+        "hull_km2": 24.586,
+        "span_km": 8.415,
+        "n_years": 3,
+        "lon": 105.512,
+        "lat": 37.549
+      },
+      {
+        "site_id": "S200_001523",
+        "patch_count": 7,
+        "hull_km2": 21.928,
+        "span_km": 7.996,
+        "n_years": 3,
+        "lon": 106.632,
+        "lat": 38.518
+      },
+      {
+        "site_id": "S200_000606",
+        "patch_count": 2,
+        "hull_km2": 21.808,
+        "span_km": 8.479,
+        "n_years": 1,
+        "lon": 100.514,
+        "lat": 36.024
+      },
+      {
+        "site_id": "S200_000341",
+        "patch_count": 22,
+        "hull_km2": 19.365,
+        "span_km": 7.97,
+        "n_years": 9,
+        "lon": 93.621,
+        "lat": 43.014
+      },
+      {
+        "site_id": "S200_003127",
+        "patch_count": 103,
+        "hull_km2": 18.901,
+        "span_km": 7.929,
+        "n_years": 9,
+        "lon": 112.896,
+        "lat": 40.011
+      },
+      {
+        "site_id": "S200_000520",
+        "patch_count": 7,
+        "hull_km2": 18.6,
+        "span_km": 8.265,
+        "n_years": 3,
+        "lon": 99.009,
+        "lat": 39.988
+      },
+      {
+        "site_id": "S200_000600",
+        "patch_count": 12,
+        "hull_km2": 18.319,
+        "span_km": 14.153,
+        "n_years": 6,
+        "lon": 100.534,
+        "lat": 36.175
+      },
+      {
+        "site_id": "S200_001136",
+        "patch_count": 10,
+        "hull_km2": 17.176,
+        "span_km": 7.551,
+        "n_years": 4,
+        "lon": 105.054,
+        "lat": 37.569
+      },
+      {
+        "site_id": "S200_000573",
+        "patch_count": 6,
+        "hull_km2": 17.123,
+        "span_km": 8.417,
+        "n_years": 1,
+        "lon": 100.299,
+        "lat": 36.001
+      },
+      {
+        "site_id": "S200_001575",
+        "patch_count": 3,
+        "hull_km2": 16.694,
+        "span_km": 7.209,
+        "n_years": 2,
+        "lon": 106.763,
+        "lat": 37.941
+      },
+      {
+        "site_id": "S200_001638",
+        "patch_count": 9,
+        "hull_km2": 16.563,
+        "span_km": 6.757,
+        "n_years": 4,
+        "lon": 107.0,
+        "lat": 37.981
+      },
+      {
+        "site_id": "S200_000782",
+        "patch_count": 16,
+        "hull_km2": 15.517,
+        "span_km": 8.121,
+        "n_years": 7,
+        "lon": 102.335,
+        "lat": 38.105
+      },
+      {
+        "site_id": "S200_002514",
+        "patch_count": 21,
+        "hull_km2": 15.499,
+        "span_km": 6.594,
+        "n_years": 8,
+        "lon": 111.353,
+        "lat": 40.724
+      },
+      {
+        "site_id": "S200_000771",
+        "patch_count": 5,
+        "hull_km2": 15.201,
+        "span_km": 7.459,
+        "n_years": 3,
+        "lon": 102.269,
+        "lat": 38.098
+      },
+      {
+        "site_id": "S200_009118",
+        "patch_count": 5,
+        "hull_km2": 14.904,
+        "span_km": 8.947,
+        "n_years": 2,
+        "lon": 125.153,
+        "lat": 46.236
+      },
+      {
+        "site_id": "S200_008923",
+        "patch_count": 11,
+        "hull_km2": 14.848,
+        "span_km": 6.396,
+        "n_years": 5,
+        "lon": 123.116,
+        "lat": 44.916
+      },
+      {
+        "site_id": "S200_000345",
+        "patch_count": 11,
+        "hull_km2": 14.633,
+        "span_km": 6.526,
+        "n_years": 2,
+        "lon": 93.899,
+        "lat": 42.242
+      }
+    ]
+  },
+  "300": {
+    "n_sites": 8160,
+    "n_single_patch": 4185,
+    "patch_count": {
+      "p50": 1.0,
+      "p90": 8.0,
+      "p99": 30.0,
+      "max": 140.0
+    },
+    "hull_km2": {
+      "p50": 0.26566583644966635,
+      "p90": 1.8208270931863313,
+      "p99": 8.128871289401555,
+      "max": 102.62519312761074
+    },
+    "span_km": {
+      "p50": 0.9513837306314519,
+      "p90": 2.573538899099803,
+      "p99": 5.600366158756473,
+      "max": 19.50267691103887
+    },
+    "n_sites_ge3y": 1430,
+    "n_sites_ge5y": 397,
+    "n_mega_gt50km2": 2,
+    "n_mega_gt10km_span": 9,
+    "top25": [
+      {
+        "site_id": "S300_000546",
+        "patch_count": 42,
+        "hull_km2": 102.625,
+        "span_km": 19.503,
+        "n_years": 9,
+        "lon": 100.572,
+        "lat": 36.139
+      },
+      {
+        "site_id": "S300_000675",
+        "patch_count": 22,
+        "hull_km2": 50.673,
+        "span_km": 11.72,
+        "n_years": 5,
+        "lon": 102.142,
+        "lat": 38.605
+      },
+      {
+        "site_id": "S300_000359",
+        "patch_count": 18,
+        "hull_km2": 47.74,
+        "span_km": 10.987,
+        "n_years": 8,
+        "lon": 95.132,
+        "lat": 36.38
+      },
+      {
+        "site_id": "S300_000697",
+        "patch_count": 26,
+        "hull_km2": 40.968,
+        "span_km": 13.434,
+        "n_years": 8,
+        "lon": 102.3,
+        "lat": 38.099
+      },
+      {
+        "site_id": "S300_000315",
+        "patch_count": 10,
+        "hull_km2": 40.587,
+        "span_km": 10.81,
+        "n_years": 3,
+        "lon": 93.377,
+        "lat": 36.784
+      },
+      {
+        "site_id": "S300_000989",
+        "patch_count": 17,
+        "hull_km2": 39.65,
+        "span_km": 11.12,
+        "n_years": 5,
+        "lon": 105.039,
+        "lat": 37.561
+      },
+      {
+        "site_id": "S300_000323",
+        "patch_count": 33,
+        "hull_km2": 34.334,
+        "span_km": 9.613,
+        "n_years": 9,
+        "lon": 93.624,
+        "lat": 43.025
+      },
+      {
+        "site_id": "S300_001737",
+        "patch_count": 27,
+        "hull_km2": 33.331,
+        "span_km": 9.421,
+        "n_years": 6,
+        "lon": 109.678,
+        "lat": 40.275
+      },
+      {
+        "site_id": "S300_000267",
+        "patch_count": 16,
+        "hull_km2": 32.339,
+        "span_km": 10.09,
+        "n_years": 5,
+        "lon": 90.317,
+        "lat": 44.04
+      },
+      {
+        "site_id": "S300_000349",
+        "patch_count": 17,
+        "hull_km2": 32.323,
+        "span_km": 10.533,
+        "n_years": 6,
+        "lon": 94.483,
+        "lat": 40.109
+      },
+      {
+        "site_id": "S300_001416",
+        "patch_count": 18,
+        "hull_km2": 30.88,
+        "span_km": 9.404,
+        "n_years": 6,
+        "lon": 106.985,
+        "lat": 37.984
+      },
+      {
+        "site_id": "S300_000487",
+        "patch_count": 18,
+        "hull_km2": 29.789,
+        "span_km": 9.557,
+        "n_years": 6,
+        "lon": 99.009,
+        "lat": 39.983
+      },
+      {
+        "site_id": "S300_005759",
+        "patch_count": 131,
+        "hull_km2": 27.22,
+        "span_km": 9.568,
+        "n_years": 12,
+        "lon": 117.649,
+        "lat": 35.922
+      },
+      {
+        "site_id": "S300_001093",
+        "patch_count": 9,
+        "hull_km2": 24.586,
+        "span_km": 8.415,
+        "n_years": 3,
+        "lon": 105.512,
+        "lat": 37.549
+      },
+      {
+        "site_id": "S300_000524",
+        "patch_count": 4,
+        "hull_km2": 24.359,
+        "span_km": 8.234,
+        "n_years": 1,
+        "lon": 100.275,
+        "lat": 36.052
+      },
+      {
+        "site_id": "S300_000365",
+        "patch_count": 19,
+        "hull_km2": 23.653,
+        "span_km": 8.193,
+        "n_years": 5,
+        "lon": 95.235,
+        "lat": 36.342
+      },
+      {
+        "site_id": "S300_002753",
+        "patch_count": 112,
+        "hull_km2": 22.106,
+        "span_km": 8.615,
+        "n_years": 9,
+        "lon": 112.897,
+        "lat": 40.011
+      },
+      {
+        "site_id": "S300_001316",
+        "patch_count": 8,
+        "hull_km2": 21.928,
+        "span_km": 7.996,
+        "n_years": 3,
+        "lon": 106.632,
+        "lat": 38.519
+      },
+      {
+        "site_id": "S300_000553",
+        "patch_count": 2,
+        "hull_km2": 21.808,
+        "span_km": 8.479,
+        "n_years": 1,
+        "lon": 100.514,
+        "lat": 36.024
+      },
+      {
+        "site_id": "S300_000526",
+        "patch_count": 7,
+        "hull_km2": 21.114,
+        "span_km": 9.359,
+        "n_years": 1,
+        "lon": 100.302,
+        "lat": 35.997
+      },
+      {
+        "site_id": "S300_000548",
+        "patch_count": 12,
+        "hull_km2": 18.319,
+        "span_km": 14.153,
+        "n_years": 6,
+        "lon": 100.534,
+        "lat": 36.175
+      },
+      {
+        "site_id": "S300_000368",
+        "patch_count": 8,
+        "hull_km2": 18.089,
+        "span_km": 6.941,
+        "n_years": 5,
+        "lon": 95.24,
+        "lat": 36.407
+      },
+      {
+        "site_id": "S300_003117",
+        "patch_count": 82,
+        "hull_km2": 16.975,
+        "span_km": 7.122,
+        "n_years": 6,
+        "lon": 113.418,
+        "lat": 36.587
+      },
+      {
+        "site_id": "S300_001361",
+        "patch_count": 3,
+        "hull_km2": 16.694,
+        "span_km": 7.209,
+        "n_years": 2,
+        "lon": 106.763,
+        "lat": 37.941
+      },
+      {
+        "site_id": "S300_005932",
+        "patch_count": 14,
+        "hull_km2": 16.651,
+        "span_km": 7.339,
+        "n_years": 7,
+        "lon": 117.953,
+        "lat": 33.251
+      }
+    ]
+  }
+}

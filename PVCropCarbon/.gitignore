@@ -10,6 +10,13 @@ outputs/*
 outputs/manifests/*
 !outputs/manifests/experiment_registry.csv
 
+# 审计报告（文本 provenance）进版本库；大矢量/栅格产物不进
+!outputs/audits/
+outputs/audits/*
+!outputs/audits/*.md
+!outputs/audits/*.json
+!outputs/audits/*.csv
+
 __pycache__/
 *.pyc
 

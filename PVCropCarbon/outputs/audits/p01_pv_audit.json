@@ -1,0 +1,66 @@
+{
+  "n_src": 30023,
+  "n_records": 29979,
+  "n_dropped_duplicates": 44,
+  "src_crs": "EPSG:4326",
+  "analysis_crs": "+proj=aea +lat_1=25 +lat_2=47 +lat_0=0 +lon_0=105 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs",
+  "geom_invalid_src": 144,
+  "area_unit_ratio_median": 1.0000341604928948,
+  "area_unit_is_km2": true,
+  "pv_area_m2_sum": 3711007144.224559,
+  "pv_area_km2_src_sum": 3711.1328612435523,
+  "duplicate_geom_groups": 43,
+  "duplicate_patches": 87,
+  "n_multipolygon": 127,
+  "n_offshore": 95,
+  "inst_date_anomalies": [
+    {
+      "objectid": 21400,
+      "patch_id": "P001938",
+      "inst_time": 201650831.0,
+      "inst_year": 2016,
+      "inst_date": "20160701",
+      "inst_date_flag": "fixed_missing"
+    },
+    {
+      "objectid": 20048,
+      "patch_id": "P003467",
+      "inst_time": 20190321.0,
+      "inst_year": 2019,
+      "inst_date": "20190321",
+      "inst_date_flag": "year_from_time"
+    },
+    {
+      "objectid": 20046,
+      "patch_id": "P003472",
+      "inst_time": 20170721.0,
+      "inst_year": 2017,
+      "inst_date": "20170721",
+      "inst_date_flag": "year_from_time"
+    }
+  ],
+  "major_type_counts": {
+    "Cropland": 11483,
+    "Grassland": 9075,
+    "Woodland": 3846,
+    "Unused land": 1913,
+    "Built-up land": 1865,
+    "Water surface": 1702,
+    "Ocean area": 95
+  },
+  "inst_year_counts": {
+    "2010": 104,
+    "2011": 737,
+    "2012": 505,
+    "2013": 1359,
+    "2014": 1076,
+    "2015": 1859,
+    "2016": 3108,
+    "2017": 5272,
+    "2018": 3906,
+    "2019": 2832,
+    "2020": 2617,
+    "2021": 3608,
+    "2022": 2996
+  }
+}

@@ -1,6 +1,7 @@
 # P03 Site → Phase（完整批次几何）
 
-status: draft            <!-- draft | ready | running | done | blocked -->
+status: done            <!-- draft | ready | running | done | blocked -->
+执行者: Claude Code 直接执行（用户 2026-09-09 授权），脚本 `code/pipeline/build_phases_p01_p03.py`
 前置依赖: P02 done（`site_membership.parquet` + `site_candidates.gpkg`）
 = metadata/tasks.tsv 的 T03
 后续 P04 用本卡产出的**完整 Phase** 与权威县界相交，才得到 T01 批次基础数据表。
@@ -92,28 +93,49 @@ status: draft            <!-- draft | ready | running | done | blocked -->
 
 ---
 
-## 运行记录（Codex）
+## 运行记录（Claude Code 直接执行）
 
-卡片 commit: `<短哈希>`  ·  环境: `code/env/` @ sha256 `<…>`  ·  起止: `<…>`
+env `pvcarbon` · 起止 2026-09-09 22:07–22:08 (+08) ·
+报告 `outputs/audits/p01_p03_report.md` + `outputs/audits/p03_phase_summary.json`。
 
-### 实际参数（与卡片的差异必须标注）
+### 与卡片的差异
 
-### 产物
+- Phase 几何 = `GeoDataFrame.dissolve(by=["site_id","year"])`（= `unary_union`），不 simplify/buffer。
+- `major_type_mode` / `mtype_crop`（耕地面积占比）按面积加权向量化计算。
+- shp 导出用 pyogrio，`encoding=utf-8`（带 `.cpg`）；字段名全部 ≤10 字符。
+- `is_offshore` 字段名在 shp 中为 `offshore`。
 
-| 文件 | SHA256 | 行数/尺寸 |
-|---|---|---|
+### 产物（服务器）
+
+| 文件 | 说明 |
+|---|---|
+| `work/phases.gpkg` | layers `phases_d30/50/100/200/300`，Albers，权威版本 |
+| `work/phase_patch_map.parquet` | 计划字段合并进 `site_membership.parquet` —— **本次未单出**，`phase_id` = `site_id + "_" + year` 可反推，patch↔phase 由 `site_membership` + `patches_clean.inst_year` 还原 |
+| `outputs/phase_vector/phases_d{30,50,100,200,300}.shp` | **建设批次矢量**，下游按 `phase_id` 加属性。字段 16：phase_id site_id thr_m year patch_cnt area_m2 parea_sum overlap_r n_parts date_min date_max mtype_mode mtype_crop offshore site_np site_ny |
 
 ### 验收门槛结果
 
-- [ ]
+| 阈值m | Phase数 | Σpatch | 单patch | area p99 km² | area max km² | Σarea km² | 多部件 | 重叠>5% | 耕地主导 | 海上 |
+|---|---|---|---|---|---|---|---|---|---|---|
+| 30 | 26688 | 29979 | 24186 | 1.76 | 16.4 | 3711 | 2588 | 1 | 10193 | 95 |
+| 50 | 22414 | 29979 | 17940 | 2.06 | 16.4 | 3711 | 4553 | 1 | 8518 | 91 |
+| 100 | 18059 | 29979 | 12691 | 2.34 | 16.4 | 3711 | 5432 | 1 | 6993 | 83 |
+| 200 | 15154 | 29979 | 9847 | 2.72 | 16.4 | 3711 | 5353 | 1 | 6000 | 82 |
+| 300 | 14048 | 29979 | 8892 | 2.88 | 23.7 | 3711 | 5200 | 1 | 5623 | 79 |
+
+- [x] 每阈值 Σ`patch_cnt` = 29,979；`phase_id` 唯一
+- [x] `phase_id` 拆回 `(site_id, year)` 与 `site_membership` 一致
+- [x] `area_m2 ≤ parea_sum`；重叠 > 5% 的 Phase **仅 1 个**（max overlap 0.363，非重复几何、是两块部分重叠图斑）
+- [x] Σ`phase_area` 阈值间差 < 1%（恒 3711 km²）
+- [x] `year` 全部 ∈ [2010, 2022]
 
 ### BLOCKED / 异常
 
+无。1 个 overlap 0.363 的 Phase 已知（真实部分重叠图斑，不影响结构）。
+
 ### 给 Claude Code 的问题
 
-1.
-
-> 完成后：`experiment_registry.csv` 加一行；本文件 status 改 done/blocked；同步 `tasks.tsv` T03。
+1. `phase_patch_map.parquet` 是否需要单独物化？（现可由 `site_membership` + `patches_clean` 还原）
 
 ---
 
@@ -121,11 +143,20 @@ status: draft            <!-- draft | ready | running | done | blocked -->
 
 ### 回答了什么
 
-<完整 Phase 是否成型；跨年 Site 展开是否合理；主导地类为 Cropland 的 Phase 占比。>
+- **完整 Phase 成型**：5 阈值各一套，几何为 patch 并集，`phase_id = <site_id>_<year>` 稳定唯一。
+- **跨年展开合理**：Site 数 → Phase 数（如 100 m：12,590 Site → 18,059 Phase），
+  多出的是同一 Site 不同建设年。
+- **耕地主导 Phase**：100 m 下 6,993 / 18,059（39%），与 patch 层 Cropland 占比一致。
+- **建设批次矢量已导出 shp**，下游统计（作物退出、环带、碳）按 `phase_id` 左连接加属性列。
 
 ### 是否触发停止/降级条件
 
+否。
+
 ### 下一步
 
-- [ ] 边界源决策后起草 P04（Phase×县 → T01 表）
-- [ ] Phase footprint 已可作为主线环带（P07）的输入前体
+- [ ] 基线阈值：诊断倾向 **50–100 m**（单 patch Site 占比从 30 m 的 85% 降到 100 m 的 59%，
+      巨型 Site 仍 0）——最终等 S07 人工样本
+- [ ] `phase_patch_map` 物化留待需要时（或并入 P04）
+- [ ] 边界源决策 → P04（Phase×县 → T01 表）
+- [ ] Phase footprint 可直接作主线环带（P07）输入前体

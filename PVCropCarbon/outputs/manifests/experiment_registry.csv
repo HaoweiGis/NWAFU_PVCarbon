@@ -1,1 +1,2 @@
 run_id,exp,date,git_commit,env_hash,input_versions,params_json,output_dir,status,run_record,notes
+P01P03-20260909,P01+P02+P03,2026-09-09,pending,739e1c84dcccbf85b09542eda44b0d40b35b56905d0b71e967e599cadc0aeeda,"PV=chen_2010_2022 sha c716784c; CLCD=v01 2000-2025",thresholds=[30;50;100;200;300],PVCropCarbon/work + outputs/phase_vector,done,"docs/experiment_design/P01,P02,P03 运行记录","Claude Code 直接执行; 去重 44 patch -> 29979; 建设批次 shp 5 套"

@@ -1,8 +1,8 @@
 id	stage	depends_on	output	acceptance	status
-T01	Audit and normalize sources	S01-S13	metadata/frozen_sources.tsv	all P0 sources versioned, hashed, readable and semantically frozen	BLOCKED
-T02	Patch to Site	T01	work/site_candidates.gpkg	30/50/100/200/300 m candidates built; baseline selected from labelled sample	BLOCKED
-T03	Site to Phase	T02	work/phases.gpkg	phase_id is unique Site plus install year; original patches traceable	BLOCKED
-T04	Phase-county intersection	T03,S06	outputs/phase_county.parquet	complete Phase preserved; intersection areas reconcile to Phase area	BLOCKED
+T01	Audit and normalize sources	S01-S13	metadata/analysis_grid.json; metadata/frozen_sources.tsv	all P0 sources versioned, hashed, readable and semantically frozen	PARTIAL 2026-09-09 (grid+PV frozen; boundary audit + frozen_sources.tsv pending P04)
+T02	Patch to Site	T01	work/site_membership.parquet	30/50/100/200/300 m candidates built; baseline selected from labelled sample	DONE 2026-09-09 (5 candidates; baseline pending S07)
+T03	Site to Phase	T02	work/phases.gpkg; outputs/phase_vector/phases_d{d}.shp	phase_id is unique Site plus install year; original patches traceable	DONE 2026-09-09
+T04	Phase-county intersection	T03,S06	outputs/phase_county.parquet	complete Phase preserved; intersection areas reconcile to Phase area	BLOCKED (S06)
 T05	Pre-construction stable staple crops	T03,S03-S05	work/staple_pre.parquet	crop-specific annual windows and stable rules pass validation	BLOCKED
 T06	Post-construction crop continuation/exit	T05	outputs/crop_exit.parquet	two complete post years; mutually exclusive crop classes; areas reconcile	BLOCKED
 T07	Phase ring-year panel	T03,S02,S06,S09-S11	outputs/ring_landchange.parquet	rings exclude Phase; no overlap double count; first expansion separated from recultivation	BLOCKED

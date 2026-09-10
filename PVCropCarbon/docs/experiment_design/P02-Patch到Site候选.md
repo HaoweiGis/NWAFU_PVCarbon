@@ -134,6 +134,14 @@ env `pvcarbon` · 起止 2026-09-09 22:07–22:08 (+08) · 输入 29,979 patch�
 Top 巨型 Site 集中在青海共和/塔拉滩(lon≈100.5, lat≈36)、甘肃武威(102,38.6)、
 新疆哈密(90.3,44)、内蒙库布其/达拉特(109.7,40.3)——均为真实连片光伏基地。
 
+### 补充产物（P02b，2026-09-10）
+
+`code/pipeline/build_sites_p02b.py`（读 P02 既有产物，不重算聚类）产出**场址级矢量**：
+`work/sites.gpkg` + `outputs/site_vector/sites_d{30,50,100,200,300}.shp`，一行一个 Site，
+13 字段含 **`n_patch`（每个 Site 的图斑数）**、`n_phase`（建设批次数）、`year_min/max`、
+`area_m2` / `hull_km2` / `span_km` 等。字段字典见技术思路 §8.2。
+每阈值 Σ`n_patch` = 29,979 ✓。
+
 ### 给 Claude Code 的问题
 
 1. 巨型 Site（决策 #2「看了再定」）——见解读。

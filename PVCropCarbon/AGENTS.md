@@ -75,8 +75,11 @@ logs/                  服务器运行日志（gitignore）
 
 ## 冻结决策（子项目专属；改动走 versions/ + 更新 INDEX）
 
-当前权威方法文档：[technical/CCD_2001_2024_技术思路_V1.md](technical/CCD_2001_2024_技术思路_V1.md)
-（**统计口径与正式分析参数尚未冻结**）。
+当前权威方法文档：
+- [technical/光伏建设批次基础数据表_技术思路_V1.md](technical/光伏建设批次基础数据表_技术思路_V1.md)
+  —— T01（Patch→Site→Phase→县）方法说明。Site 邻接阈值临时基线 **100 m**，正式冻结待 S07。
+- [technical/CCD_2001_2024_技术思路_V1.md](technical/CCD_2001_2024_技术思路_V1.md)
+  —— 作物（CCD）部分（**统计口径与正式分析参数尚未冻结**）。
 
 **已核实并冻结（数据身份，见 CCD_2001_2024_source.tsv）**：
 

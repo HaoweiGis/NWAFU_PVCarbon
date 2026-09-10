@@ -1,0 +1,67 @@
+{
+  "30": {
+    "n_sites": 24560,
+    "sum_n_patch": 29979,
+    "n_patch": {
+      "p50": 1.0,
+      "p90": 2.0,
+      "p99": 4.0,
+      "max": 21
+    },
+    "n_single_patch": 20972,
+    "n_multi_year": 1800,
+    "shp": "/data/ssd/haoweimu/NWAFU_PVCarbon/PVCropCarbon/outputs/site_vector/sites_d30.shp"
+  },
+  "50": {
+    "n_sites": 18273,
+    "sum_n_patch": 29979,
+    "n_patch": {
+      "p50": 1.0,
+      "p90": 3.0,
+      "p99": 8.0,
+      "max": 34
+    },
+    "n_single_patch": 12970,
+    "n_multi_year": 2965,
+    "shp": "/data/ssd/haoweimu/NWAFU_PVCarbon/PVCropCarbon/outputs/site_vector/sites_d50.shp"
+  },
+  "100": {
+    "n_sites": 12590,
+    "sum_n_patch": 29979,
+    "n_patch": {
+      "p50": 1.0,
+      "p90": 5.0,
+      "p99": 15.0,
+      "max": 77
+    },
+    "n_single_patch": 7381,
+    "n_multi_year": 3320,
+    "shp": "/data/ssd/haoweimu/NWAFU_PVCarbon/PVCropCarbon/outputs/site_vector/sites_d100.shp"
+  },
+  "200": {
+    "n_sites": 9288,
+    "sum_n_patch": 29979,
+    "n_patch": {
+      "p50": 1.0,
+      "p90": 7.0,
+      "p99": 24.0,
+      "max": 138
+    },
+    "n_single_patch": 4898,
+    "n_multi_year": 3089,
+    "shp": "/data/ssd/haoweimu/NWAFU_PVCarbon/PVCropCarbon/outputs/site_vector/sites_d200.shp"
+  },
+  "300": {
+    "n_sites": 8160,
+    "sum_n_patch": 29979,
+    "n_patch": {
+      "p50": 1.0,
+      "p90": 8.0,
+      "p99": 30.0,
+      "max": 140
+    },
+    "n_single_patch": 4185,
+    "n_multi_year": 2894,
+    "shp": "/data/ssd/haoweimu/NWAFU_PVCarbon/PVCropCarbon/outputs/site_vector/sites_d300.shp"
+  }
+}

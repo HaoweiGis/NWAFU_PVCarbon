@@ -44,8 +44,33 @@ status: ready
 
 ## 执行记录（Claude Code 直接执行）
 
-起止：`<…>`
+起止：2026-09-24 19:32 – 2026-09-25 05:16（+08，主下载 ~9.4h + 重试 ~几分钟；脚本
+`code/pipeline/download_dem.py` + `retry_dem_failures.py` + `finalize_dem.py`）
 
 ### 结果
 
+- 用 pilot 候选边界（缓冲 1°）筛出 **1,324 个候选瓦片**（比整个矩形范围少 ~43%）。
+- 首轮：1,252 OK、42 个确认 404（真实无数据，多为边界外海域）、30 个瞬时网络错误
+  （`URLError`/`BrokenPipeError`/`RemoteDisconnected`，**不是** 404，是可重试的传输失败）。
+- 重试 30 个失败瓦片：**全部成功**。
+- **最终 1,282 个瓦片全部到位，0 个未解决失败**，共 49.4 GB。
+- 建好 `dem_china.vrt`（EPSG:4326，225562×136800，30m 原生分辨率）。
+- 5 个抽样点高程健全性检查全过（拉萨附近 3651m、石家庄 68m、塔里木盆地 998m、
+  珠峰东坡 5309m、福州 13m，均落在预期区间）。
+
+### 产物
+
+- `07_topography/copernicus_glo30/raw/`（1,282 个 tif，49.4 GB）
+- `07_topography/copernicus_glo30/dem_china.vrt`
+- `07_topography/copernicus_glo30/metadata/{tile_manifest.{csv,json}, download_report.md}`（含每瓦片 SHA256）
+
 ### BLOCKED / 异常
+
+无（最终）。**过程中发现脚本 bug**：初版下载在网络瞬时错误时会静默计入 `fail` 但不重试，
+已写 `retry_dem_failures.py` 补救——**下次类似批量下载任务应从一开始就内置重试**
+（此教训已用于修复 ESA Biomass 任务的同类问题，见该卡）。
+
+### 备注
+
+瓦片选择基于 pilot 边界（非权威），覆盖中国及少量境外邻近区域，**不是精确国界裁剪**；
+正式坡度计算前需按权威边界（S06）裁剪。坡度算法本任务不做。

@@ -3,12 +3,15 @@
 10x10deg tiles, years 2010-2012 + 2015-2022 (V1 minimum requirement). CEDA anonymous HTTPS,
 no auth needed (probed 2026-09-24: dap.ceda.ac.uk/neodc/esacci/biomass/... returns 200 anonymously).
 """
-import json, hashlib, time
+import json, hashlib, socket, time
 from pathlib import Path
 import urllib.request
 import geopandas as gpd
 from shapely.geometry import box
 from shapely.ops import unary_union
+
+socket.setdefaulttimeout(60)  # BUG FIX 2026-09-25: previous run had no timeout and hung
+                                # ~8.5h on a stalled connection (dead TCP, no error, no progress).
 
 ROOT = Path("/data/ssd/haoweimu/NWAFU_PVCarbon/05_carbon/esa_cci_biomass_v7_china")
 RAW, META = ROOT / "raw", ROOT / "metadata"

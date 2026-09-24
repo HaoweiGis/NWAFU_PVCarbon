@@ -40,8 +40,25 @@ status: ready
 
 ## 执行记录（Claude Code 直接执行）
 
-起止：`<…>`
+起止：2026-09-24（脚本 `code/pipeline/audit_soilgrids.py`）
 
 ### 结果
 
+- CRS 统一 `EPSG:4326`；NoData 均为 `None`（未在 tif 标签设 NoData，需要另查 SoilGrids 官方文档
+  的哨兵值约定，否则栅格计算会把边缘/无效像元当有效值）。
+- 分辨率有 4 组极接近但不完全相同的值（0.00226/0.002261 × 0.00239/0.002389 度），差异 < 0.05%，
+  记录在案，不影响使用但"完全一致"这句不能说。
+- 重新用 `gdalbuildvrt` 在 `mosaics_china/` 建了 9 组镶嵌，中间行抽样 valid_frac 正常。
+
 ### BLOCKED / 异常
+
+**⚠ 两处关键发现**：
+
+1. **既有 8 个 `.vrt` 不是本地镶嵌**——是 SoilGrids 官方全球产品自带的参考 VRT（Homolosine 投影，
+   指向远程 `tileSG-*` 路径），本地打不开。已用真正的中国 tile 重新建了 `mosaics_china/*.vrt`。
+2. **`cfvo`（砾石率）不完整**：`cfvo_15-30cm` **完全缺失（0 个 tile）**，`cfvo_5-15cm` 缺 8/28。
+   `bdod`、`soc` 两个变量 9 个深度组合齐全。V1 设计要求 SOC 库存计算需要砾石率做细土比例校正
+   （`researchwrite/.../V1_最小必要数据与下载方案.md` §1.B），**cfvo 不齐会影响 0–30cm SOC
+   库存的正式产出**。
+
+**→ 需要新开下载任务卡**补齐 `cfvo_5-15cm`（8 块）与 `cfvo_15-30cm`（28 块，全新）。

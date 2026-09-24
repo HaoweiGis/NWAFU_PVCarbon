@@ -47,8 +47,26 @@ status: ready
 
 ## 执行记录（Claude Code 直接执行）
 
-起止：`<…>`
+起止：2026-09-24（脚本 `code/pipeline/parse_grid_ef.py`，两轮迭代）
 
 ### 结果
 
+- **14 份区域 OM/BM 文件全部解析成功，89 条 (年份/vintage, 区域, OM, BM) 记录**，
+  数值健全性检查（0.3–1.5 tCO2/MWh）全部通过，0 条超界。
+- 表格锚点：多数文件用 "EFgrid,OM…EFgrid,BM" 表头；2 份最早期文件（2006/2007 vintage）该符号
+  在 pdftotext 文本层丢失，改用 "排放因子数值/结果" 章节标记兜底定位，两种都命中。
+- **确认区域口径变化**：早期文件（如 2010 年公告，对应 2006–2008 数据）单列「海南省电网」，
+  2017 年起海南并入南方区域电网——**下游做时间序列不能直接拼接，需要口径统一或分段处理**。
+- 2021 年"全国电力平均二氧化碳排放因子"单独一张表（`grid_ef_national_average.csv`），
+  与区域 OM/BM 严格分开，字段名标 `average` 不用 `marginal`，符合术语边界。
+- **确认 2020、2022 年区域 OM/BM 缺失**——本次解析范围内源文件本就没有，不是解析遗漏。
+
+### 产物
+
+- `06_electricity/china_grid_emission_factors_official/parsed/grid_ef_regional_om_bm.csv`
+- `.../parsed/grid_ef_national_average.csv`
+- `.../parsed/parse_report.md`
+
 ### BLOCKED / 异常
+
+无（本任务范围内全部完成）。2020/2022 缺口已如实记录，不在本任务解决——需要新的下载/检索任务。

@@ -42,8 +42,26 @@ status: ready
 
 ## 执行记录（Claude Code 直接执行）
 
-起止：`<…>`
+起止：2026-09-24（脚本 `code/pipeline/extract_audit_ccd.py`，解压+审计约十几分钟）
 
 ### 结果
 
+- 解压 672 个 TIFF 全部成功（`D010_CCD_2001-2024/extracted/`），**0 个不可读文件**。
+- CRS、像元大小、NoData 集合均为单一值（逐文件核对通过）。
+- 28 个顶层目录是**英文/拼音**命名（Anhui, Chongqing, … 非中文省名）——首轮自动模糊匹配脚本
+  因此全部落空（bug，非真实覆盖问题），已手工建立拼音-中文映射表核对，见更正记录。
+- **实际覆盖 28 省，缺失 6 省 = 北京、西藏、青海、台湾、香港、澳门 —— 与用户此前给出的预期
+  缺省清单完全一致 ✓**。
+- 发现目录名 `Shannxi`（陕西，非标准拼音）容易与 `Shanxi`（山西）混淆，写进已知问题，
+  后续代码引用目录名时必须用映射表，不能靠拼音猜测。
+
+### 产物
+
+- `D010_CCD_2001-2024/extracted/`（672 TIFF）
+- `D010_CCD_2001-2024/metadata/coverage_audit.{csv,json}`、`ccd_extract_report.md`（含更正记录）
+
 ### BLOCKED / 异常
+
+无。`coverage_missing` 编码规则已写入报告：缺省 6 省的 PV Phase 在 P05/P06 不产出正式 CCD 作物
+统计，编码 `coverage_missing`，不得填类别 0；需要为这些 Phase 设计 CLCD-only 降级口径（留给
+P05 卡片决定）。
